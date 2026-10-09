@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "cases": 1464,
+  "caption_step": 29000,
+  "caption_run": "canva-core-cn/design-layout-megatron-swift/9c4d7a32e190",
+  "input_sha256": "e8f7a26c90607d7d216c3e417ea6c343292e5142a9517c1e5b1ca1dde6426854",
+  "qwen_pe_predictions_sha256": "528ee56b1090a2c4841a661057cf863778618e18f10a2a7b6a20393828dd56c2",
+  "fixed_runtime_files": {
+    "training_reader/clean_caption.py": "c05eb8347fde1bdf3c07c3beda230fa2c6c8610a132d629a1bca96892eac8971",
+    "training_reader/craft_v1_edit_mds.py": "542bc9cdbdadf58907ce14e7e01c60fbc3724a71b581defe9495cc60cf8b0af9",
+    "tayo_eval/adapt_pe_to_native.py": "7189d124060f9b20efbd8622dac3c8b08b145e320fed00d4d74a76cdebec021a",
+    "tayo_protocol/code/prepare_inputs.py": "a202ef0b02e0f30c963b5c952d0de2248f84e4be9c34170f86ec440a13a47398",
+    "tayo_protocol/code/handoff/run.py": "79882a544ad9f2694406c820efe8bb2e2cfc8d594d87408bd27d7f4d01cd043c",
+    "pcb_edit/run_single_protocol.py": "c8790324ebfd34fc1e820725ddd179fc3156e0c9fe79c33ed0dbfc61e72ac8e8"
+  },
+  "scope": "Frozen native runtime from v1; historical input/output counts do not validate a new run"
+}

@@ -1,0 +1,18 @@
+# Pinned to the environment these reference impls were tested with.
+# transformers 5.4 is required for the qwen3_5 architecture; vllm 0.19.1 matches it.
+transformers==5.4.0
+tokenizers==0.22.1
+huggingface_hub==1.27.0
+accelerate==1.11.0
+torch==2.10.0
+torchvision==0.25.0
+pillow==11.1.0
+tqdm==4.67.1
+
+# vLLM paths (run_vllm.py offline batch, serve.sh + client.py online)
+vllm==0.19.1
+openai==2.21.0
+
+# Optional: repairs answers that are nearly-valid JSON (trailing comma, stray
+# quote). Without it, parsing still handles every well-formed answer.
+json-repair>=0.5

@@ -1,0 +1,19 @@
+{
+  "archives": [
+    {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/handovers/18k-caption-48k-ema-gsb-20261001-v1/archives/python-environments.tar.gz",
+      "key": "archives/python-environments.tar.gz",
+      "bytes": 9038575677,
+      "sha256": "51907c94606bb207273ba77e0f427d37abf169170b0e857b02749d3498b4ce26",
+      "etag": "\"c67efe285e7f303c48d5fa51a343414b-68\""
+    },
+    {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/handovers/18k-caption-48k-ema-gsb-20261001-v1/archives/docker-native-editor.tar.gz",
+      "key": "archives/docker-native-editor.tar.gz",
+      "bytes": 11532540962,
+      "sha256": "ed7c5c4d9e79f5377a938cc3c63c9ccc1fa0f4f92b1f290d267794347be310dd",
+      "etag": "\"ec66966e2001ee30518539f986369904-86\""
+    }
+  ],
+  "caption_environment": "Linux x86_64 Python 3.12; use archive environment containing Python3.12 site-packages"
+}

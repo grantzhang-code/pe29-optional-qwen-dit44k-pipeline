@@ -1,0 +1,10 @@
+{
+  "qwen_pe": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/qwen21-pe-i2i-edit-eagle64-20260928/models/pe/files/",
+  "pe29_mcore": "s3://core-cn-oss.canva.com/usr/grantzhang/design-layout-megatron-swift/runs/iev6-ocrv5-c17k-h200192-fa3/20261004-9c4d7a32e190/mcore/checkpoint-29000/",
+  "pe29_hf": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/9c4d29-qwenrewrite-dit44k-fixed-20261007/assets/model-29000/",
+  "pe_initializer": "s3://core-cn-oss.canva.com/usr/joeyzhang/design-layout-megatron-swift/models/qwen35-4b-base-hf-mtp-851bf6e-v1/",
+  "dit44_original": "s3://core-cn-training.canva.com/pixelcraft/usr/tayo/runs/edit1k-ocr93-r38k-15n-1004-0156/checkpoints/step=44000.ckpt/",
+  "dit44_ema": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe4-dit44k-20261006/shared/checkpoint-ema-compact/",
+  "text_encoder": "s3://core-cn-oss.canva.com/checkpoints/qwen/Qwen3.8-27B/",
+  "vae": "s3://core-cn-oss.canva.com/checkpoints/flux2/FLUX.2-klein-4B-vae/"
+}

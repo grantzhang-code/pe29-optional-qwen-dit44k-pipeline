@@ -1,0 +1,8 @@
+{
+  "extraction_sha256": "4b99a5b1b380174903444d5158933b617c55a806c7dca355e5903a1323abf687",
+  "source_metadata_sha256": "19c797fa1523e1bfdb5c974530ea8a4e4ae2f8bcf5f7e300f4498d9dd519a5e7",
+  "source_meta_sha256": "c1b776927a6c4e6c265c91aea2bf5218778377eb5ad40f8491c28623e24029d6",
+  "compact_metadata_sha256": "3e1ec664ddf38123ac1666aca73b23c61c57674ba2be982b86bd577cba57ce54",
+  "ema_chunks": 3704,
+  "ema_tensors": 463
+}

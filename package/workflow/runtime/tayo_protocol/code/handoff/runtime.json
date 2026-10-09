@@ -1,0 +1,42 @@
+{
+  "image": "699983977898.dkr.ecr.us-east-1.amazonaws.com/ds-core-cn-omra-trainer@sha256:6e6eba1b4309475e8234e38e6eecfea04d039677a63cc96f05f578b89fe81fb2",
+  "python": "/opt/runtime/bin/python",
+  "source": "/opt/pixelcraft",
+  "torch": "2.13.0a0+8145d630e8.nv26.06",
+  "transformers": "5.8.0",
+  "roi_policy": "pixel_aspect_fixed",
+  "roi_fix_commit": "b1aa4afafc0d91f14ff99507e708ce7965134dee",
+  "text_cap": 11776,
+  "supported_conditioning_policies": [
+    "full",
+    "reference_only"
+  ],
+  "qwen": "s3://core-cn-oss.canva.com/checkpoints/qwen/Qwen3.8-27B",
+  "vae": "s3://core-cn-oss.canva.com/checkpoints/flux2/FLUX.2-klein-4B-vae",
+  "adaptation": {
+    "name": "h200-current-scaling-fa4-varlen-v2",
+    "upstream_handoff_commit": "cb7198ddcc1171a9701e7679b97409280b5e2fa8",
+    "changes": {
+      "runtime_helpers.py": {
+        "upstream_sha256": "89ec9bf784522046d99f18a7615faa716e0edfc8b582657ed6e896bec38eae76",
+        "adapted_sha256": "19f09a38ea041945eee555b5633602a6aa53dd96b21150a4deb4f52ec855828a"
+      },
+      "mariana_transformer_engine.py": {
+        "upstream_sha256": "64da857a078d5fac86ebea02c52afa0a1de8cd3db1546faf682012d4f769be31",
+        "adapted_sha256": "23475b84d2f05f8b08d733615ee0772da86bf5589c3cb9d89b296c30c8d34566"
+      },
+      "magi_calc_meta_h200.py": {
+        "upstream_sha256": "5351ea1b99299911b4104be2b42504e3e19dd65ce44368f63ca20d8d7f6baf48",
+        "adapted_sha256": "e83d5dbd459208cb397eed3b5e03f723f1b988036cadf90bfb436d90cdae2bf1"
+      }
+    },
+    "recipe": "Float8CurrentScaling defaults from pinned TE; explicit for FP8 weight initialization and autocast",
+    "cross_gpu_bitwise_equivalence_claimed": false,
+    "dependency_versions_changed": false,
+    "attention_compatibility": "Enable existing public FA4 varlen route on SM90 as well as SM120; preserve all full-mask, disjoint-range and nonempty checks; no arithmetic kernel changes.",
+    "checkpoint_verification": "Same complete per-shard SHA256 checks; 8 I/O/hash threads; ordered inventory and exceptions preserved."
+  },
+  "training_image": "sha256:52835823d24c09fa4eac8f1d8f1bddfd4ded04defb8913aebd7d5c9b96e7624c",
+  "input_source": "s3://core-cn-oss.canva.com/usr/josephbai/editing-mds-filtered/craft-v1-editing-0924/test/",
+  "input_variant": "v7+v4-grouped"
+}

@@ -1,0 +1,53 @@
+{
+  "allocation": {
+    "assignment": "eligible_case_position modulo 64",
+    "gpus": 64,
+    "nodes": 8,
+    "ranks": 64
+  },
+  "dataset": "PixelCraftBench v2.0",
+  "edit": {
+    "cfg": 1.0,
+    "diffusers_commit": "51a454be9a43854939d2ef2d231565f46a41e366",
+    "dtype": "bfloat16",
+    "negative_prompt": null,
+    "output_resolution": 1024,
+    "output_size_policy": "area_le_1048576_aspect_preserved_floor32_v1",
+    "seed": "42 + original input_index",
+    "steps": 40,
+    "transformers": "5.17.0",
+    "use_kv_cache": true
+  },
+  "edit_model": {
+    "model": "Qwen/Qwen-Image-2.1",
+    "revision": "790c92633540aa0cb11d9abf19eb46d861714758"
+  },
+  "eligible_cases": 1464,
+  "input_sha256": "dcadb3cde9b3d37d45008cc89aa6b5057201ab051fcdc1804a756181cdab8f03",
+  "pe": {
+    "dtype": "bfloat16",
+    "enforce_eager": true,
+    "engine": "vllm 0.26.0",
+    "max_model_len": 32768,
+    "max_new_tokens": 24000,
+    "max_num_seqs": 8,
+    "min_p": 0.0,
+    "presence_penalty": 0.0,
+    "retry_seed": "base + 1000000 * attempt",
+    "seed": "42 + original input_index",
+    "source_image_max_pixels": 1048576,
+    "target_canvas": "original GPT Image 2.5 output PNG dimensions",
+    "temperature": 1.0,
+    "tensor_parallel_size": 1,
+    "thinking": true,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "pe_model": {
+    "model": "Qwen/Qwen-Image-2.1-PE-I2I",
+    "revision": "72927bc08afc99b7888ceb7d7d51a12db3700bbd"
+  },
+  "skipped_gpt_failures": 7,
+  "source_cases": 1471,
+  "version": 1
+}

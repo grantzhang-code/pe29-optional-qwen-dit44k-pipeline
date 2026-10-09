@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/handovers/pe29-optional-qwen-dit44k-fixed-20261009-v2/",
+  "files": [
+    {
+      "key": "handover.md",
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/handovers/pe29-optional-qwen-dit44k-fixed-20261009-v2/handover.md",
+      "bytes": 41780,
+      "sha256": "a0f69a799055663cccc11716591c85ea79c7b01d995c12c9d02a6b718affbc3c"
+    },
+    {
+      "key": "workflow-sources.tar.gz",
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/handovers/pe29-optional-qwen-dit44k-fixed-20261009-v2/workflow-sources.tar.gz",
+      "bytes": 16865137,
+      "sha256": "d2c1202f74d91349ed35a17c67fc6108c80d0705e75a6e29d5590c3e9629c7bd"
+    },
+    {
+      "key": "LOCAL_VERIFIED.json",
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/handovers/pe29-optional-qwen-dit44k-fixed-20261009-v2/LOCAL_VERIFIED.json",
+      "bytes": 485,
+      "sha256": "9246e0861e2e8f117931de170af3283b2b197dfad101eaa0ee3eba52af7270fe"
+    },
+    {
+      "key": "S3_SOURCES_VERIFIED.json",
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/handovers/pe29-optional-qwen-dit44k-fixed-20261009-v2/S3_SOURCES_VERIFIED.json",
+      "bytes": 2820,
+      "sha256": "12ac0f849f3d11e80a0cdd5944f074a4e4194096110b6d025f63f8cfa3268dbf"
+    }
+  ]
+}

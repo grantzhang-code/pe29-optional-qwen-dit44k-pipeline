@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-10-09T06:28:46.191901+00:00",
+  "regression_tests": 7,
+  "cases_per_mode": 1464,
+  "modes": [
+    "original",
+    "qwen_rewrite"
+  ],
+  "real_pe_normalizer": true,
+  "python_files_parsed": 320,
+  "bash_blocks_parsed": 16,
+  "package_files": 370,
+  "fixed_dit_runtime_files_unchanged": 6,
+  "all_checkpoint_sources_s3": true,
+  "gpu_inference_rerun": false,
+  "full_model_download_rerun": false,
+  "full_environment_restore_rerun": false
+}

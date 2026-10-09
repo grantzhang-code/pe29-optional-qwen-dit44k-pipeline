@@ -1,0 +1,49 @@
+{
+  "campaign": "pe29-optional-qwen-dit44k-fixed",
+  "caption_preparation_version": "dit44k-pe-order-clean-jfd-v1",
+  "caption_retry_policy": "first_pass_greedy_only",
+  "caption_step": 29000,
+  "cases": 1464,
+  "cfg": 2,
+  "checkpoint_identity": {
+    "compact_metadata_sha256": "3e1ec664ddf38123ac1666aca73b23c61c57674ba2be982b86bd577cba57ce54",
+    "ema_chunks": 3704,
+    "ema_tensors": 463,
+    "extraction_sha256": "4b99a5b1b380174903444d5158933b617c55a806c7dca355e5903a1323abf687",
+    "source_meta_sha256": "c1b776927a6c4e6c265c91aea2bf5218778377eb5ad40f8491c28623e24029d6",
+    "source_metadata_sha256": "19c797fa1523e1bfdb5c974530ea8a4e4ae2f8bcf5f7e300f4498d9dd519a5e7"
+  },
+  "checkpoint_sources_sha256": "bf21de450ee8c855ef030af0209223ee1574bc184acb773b122a1b31cf07a169",
+  "checkpoint_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe4-dit44k-20261006/shared/checkpoint-ema-compact/",
+  "cohorts": [
+    {
+      "arm": "checkpoint-29000",
+      "label": "新 PE-29k + Qwen-PE 改写 + 修复版 DiT44k",
+      "run": "9c4d7a32e190",
+      "step": 29000
+    }
+  ],
+  "editor_step": 44000,
+  "gpus_per_worker": 8,
+  "input_sha256": "c367c9dced278f8724cd6cf8efdd1d4aa98bc3cedfec92cfa84fe74cd17d3ccb",
+  "instruction_policy": "original_user_instruction_verbatim",
+  "max_workers": 1,
+  "models_lock_sha256": "fe0871e5bdb5ff6abbef65f5e26753adce70d786be3fb350af9bc50052ccd011",
+  "native_partition_change": "Only deterministic slicing of original cohort before native preparation; original case indices and seeds retained.",
+  "original_input_sha256": "dcadb3cde9b3d37d45008cc89aa6b5057201ab051fcdc1804a756181cdab8f03",
+  "partition_policy": "ordered_inputs[node_index::node_count]; original indices retained",
+  "publication_prefix": "s3://core-cn-oss.canva.com/usr/YOUR_NAME/pixelcraftbench-v2/evaluations/YOUR_UNIQUE_PE29_RUN/",
+  "qwen_pe_predictions_sha256": null,
+  "qwen_pe_predictions_uri": null,
+  "requested_gpus": 8,
+  "runtime_dir": "/mnt/ephemeral/pcb-v2-9c4d-editor-runtime",
+  "seed_policy": "42 + input_index",
+  "slow_gpus": {},
+  "source_checkpoint_uri": "s3://core-cn-training.canva.com/pixelcraft/usr/tayo/runs/edit1k-ocr93-r38k-15n-1004-0156/checkpoints/step=44000.ckpt/",
+  "steps": 50,
+  "units_per_cohort": 1,
+  "use_qwen_pe": false,
+  "version": 2,
+  "weights": "EMA",
+  "run_configured": false
+}
