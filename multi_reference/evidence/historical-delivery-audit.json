@@ -1,0 +1,51 @@
+{
+  "delivery_integrity": "pass",
+  "cases": 419,
+  "schema_valid": 417,
+  "json_valid": 419,
+  "inference_errors": 0,
+  "predictions_sha256": "08b60555b532f5382c133da126a3f2067c3829ebe872be805b8e086819d3f343",
+  "selected_attempts": {
+    "0": 376,
+    "2": 7,
+    "1": 28,
+    "3": 4,
+    "5": 2,
+    "4": 2
+  },
+  "reference_count_histogram": {
+    "12": 34,
+    "11": 32,
+    "8": 33,
+    "7": 37,
+    "10": 31,
+    "1": 36,
+    "3": 36,
+    "6": 35,
+    "5": 38,
+    "2": 37,
+    "4": 37,
+    "9": 33
+  },
+  "failures": [
+    {
+      "input_index": 191,
+      "sample_id": "multiref-20f0d4d9bc94d1eba59adff9",
+      "attempt": 5,
+      "finish_reason": "stop",
+      "json_error": null,
+      "schema_error": "ValueError: edit group changed element ordering",
+      "inference_error": null
+    },
+    {
+      "input_index": 413,
+      "sample_id": "multiref-c6488352c82e18ecfdaa57b1",
+      "attempt": 5,
+      "finish_reason": "stop",
+      "json_error": null,
+      "schema_error": "ValueError: every target element must have exactly one edit",
+      "inference_error": null
+    }
+  ],
+  "semantic_quality_evaluated": false
+}

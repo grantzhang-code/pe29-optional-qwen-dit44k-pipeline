@@ -1,0 +1,15 @@
+{
+  "status": "complete",
+  "checkpoint_step": 8000,
+  "cases": 419,
+  "schema_valid": 419,
+  "model_valid_rows": 418,
+  "postprocessed_rows": 1,
+  "repair_index": 413,
+  "repair_kind": "documented_title_panel_coverage_repair_v1",
+  "source_snapshot_sha256": "c553494bb8ac4ebb3174a7b0ef0033fbf0c9c4c634548b3a779f7b0ad090df0f",
+  "predictions_sha256": "c4242268d4209fc8accf8375c6b6da441b7d138922098472fa65590567f57f65",
+  "raw_model_predictions_sha256": "08b60555b532f5382c133da126a3f2067c3829ebe872be805b8e086819d3f343",
+  "publication_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/multireference-pe/evaluations/e6d88249d08d-c8000-ocr-eval-h10064-20261007/caption/schema-repaired-v1/",
+  "completed_utc": "2026-10-07T23:34:14.361314+00:00"
+}

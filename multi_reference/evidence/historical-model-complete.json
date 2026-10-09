@@ -1,0 +1,18 @@
+{
+  "status": "completed_with_invalid_captions",
+  "run_id": "e6d88249d08d",
+  "checkpoint_step": 8000,
+  "checkpoint_manifest_sha256": "c6d244705f98b7d6735d324c72583df998428db1230e60756e1cf95d95933a89",
+  "cases": 419,
+  "json_valid": 419,
+  "schema_valid": 417,
+  "inference_errors": 0,
+  "bbox_order": "xyxy_1000",
+  "predictions_sha256": "08b60555b532f5382c133da126a3f2067c3829ebe872be805b8e086819d3f343",
+  "gpus": 64,
+  "gpu_shards": 64,
+  "completed_utc": "2026-10-07T23:22:48.914482+00:00",
+  "dataset_uri": "s3://core-cn-oss.canva.com/usr/josephbai/editing-ocr-repair/full-1k-20260929-v1/region-bound-v5-20260930/delivery-v2/mds/eval/multireference-pkl-v2/",
+  "publication_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/multireference-pe/evaluations/e6d88249d08d-c8000-ocr-eval-h10064-20261007/",
+  "aggregation_origin": "verified_durable_rank_markers_on_devbox_v1"
+}

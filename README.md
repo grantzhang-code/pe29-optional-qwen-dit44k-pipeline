@@ -1,3 +1,18 @@
+# Multi-reference PE · checkpoint-8000
+
+本分支提供训练 run `e6d88249d08d` 的 **checkpoint-8000 多图 PE 推理 pipeline**：有序 reference images + 原始 instruction + 目标画布 → JSON caption。
+
+**入口：[multi_reference/README.md](multi_reference/README.md)**
+
+- 支持 1–12 张 reference，冻结训练 prompt、trained MTP 和 S3 checkpoint 身份。
+- 支持 419 条冻结 MDS 评测或自定义 S3 多图 JSONL。
+- 提供模型恢复、输入准备、单卡/多卡推理、schema 重试、合并和 S3 回读验证。
+- 保留历史原始结果、targeted recovery 和结构修复的独立说明。
+
+以下为同仓库保留的单图 PE29 pipeline 说明。
+
+---
+
 # PE-29k · Optional Qwen-PE · Fixed DiT44k
 
 完整的 image-edit 推理交接：用户 instruction → 可选 Qwen-PE 改写 → PE-29k JSON caption → 修复版 DiT44k 编辑生图。

@@ -1,0 +1,37 @@
+{
+  "run_id": "e6d88249d08d",
+  "checkpoint_step": 8000,
+  "checkpoint_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/design-layout-megatron-swift/runs/multiref-pe-c17k-b300128/20261007-e6d88249d08d/mcore/checkpoint-8000/",
+  "checkpoint_manifest_sha256": "c6d244705f98b7d6735d324c72583df998428db1230e60756e1cf95d95933a89",
+  "initial_artifact_uri": "s3://core-cn-oss.canva.com/usr/joeyzhang/design-layout-megatron-swift/models/qwen35-4b-base-hf-mtp-851bf6e-v1/",
+  "initial_artifact_manifest_sha256": "d355542d67dbc5deb206034c0782daec202f57828bae79b79478417add2c750e",
+  "dataset_uri": "s3://core-cn-oss.canva.com/usr/josephbai/editing-ocr-repair/full-1k-20260929-v1/region-bound-v5-20260930/delivery-v2/mds/eval/multireference-pkl-v2/",
+  "dataset_index_sha256": "4021081103433c3c040b87620f4abcb820e0aa73e4e0dce9ccc96be343269555",
+  "expected_rows": 419,
+  "prompt_sha256": "b130b8a18049dd80e5a6367c4eb453bf5b5f6604a437a18bd248210ceed48131",
+  "bbox_order": "xyxy_1000",
+  "max_pixels": 2359296,
+  "max_model_len": 32768,
+  "max_new_tokens": 27000,
+  "sampling_temperatures": [
+    0.0,
+    0.2,
+    0.6,
+    0.6,
+    0.8,
+    1.0
+  ],
+  "environment_archive": {
+    "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/handovers/18k-caption-48k-ema-gsb-20261001-v1/archives/python-environments.tar.gz",
+    "key": "archives/python-environments.tar.gz",
+    "bytes": 9038575677,
+    "sha256": "51907c94606bb207273ba77e0f427d37abf169170b0e857b02749d3498b4ce26",
+    "etag": "\"c67efe285e7f303c48d5fa51a343414b-68\""
+  },
+  "model_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/multireference-pe/evaluations/e6d88249d08d-c8000-ocr-eval-h10064-20261007/model/hf/",
+  "model_export_manifest_sha256": "b0984d2ecaf3a51881f112f1f4530602ff72a4cfbca32a93cff7b1b1de42a943",
+  "historical_output_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/multireference-pe/evaluations/e6d88249d08d-c8000-ocr-eval-h10064-20261007/",
+  "training_run_url": "https://forge.coreweave.com/wandb/canva-core-cn/design-layout-megatron-swift/runs/e6d88249d08d",
+  "frozen_prompt_file_sha256": "a58825d63ac359a05d3cc5c46269f767ee8d9a28eb70839f1790a2802b495c0d",
+  "max_references": 12
+}

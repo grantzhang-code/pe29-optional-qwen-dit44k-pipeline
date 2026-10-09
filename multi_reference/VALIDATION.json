@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-10-09T07:51:00.838289+00:00",
+  "training_run": "e6d88249d08d",
+  "checkpoint_step": 8000,
+  "unit_tests": 12,
+  "historical_input_rows": 419,
+  "historical_json_valid": 419,
+  "historical_schema_valid": 417,
+  "aggregate_test_world_size": 64,
+  "reference_occurrences": 2656,
+  "unique_embedded_reference_payloads": 2655,
+  "frozen_mds_shards_prepared": 6,
+  "custom_s3_example_prepare": true,
+  "mock_engine_retry_and_resume": true,
+  "s3_hf_manifest_and_historical_predictions_readback": true,
+  "python_files_parsed": 7,
+  "bash_blocks_parsed": 6,
+  "credential_pattern_matches": 0,
+  "implementation_sha256": "b019589298581d6d544ea9a30ef6bb52c24e62f352a4530ef92416b349dfaa22",
+  "gpu_inference_rerun": false,
+  "full_model_download_rerun": false,
+  "full_environment_restore_rerun": false,
+  "limitations": [
+    "CPU tests and actual input preparation do not validate GPU/vLLM execution.",
+    "Historical 418/419 recovery and 419/419 structural repair are not automatic pipeline behavior."
+  ],
+  "evidence": [
+    "evidence/S3_VERIFIED.json",
+    "evidence/MDS_PREPARATION_VERIFIED.json",
+    "evidence/CUSTOM_S3_REFERENCES_VERIFIED.json"
+  ]
+}

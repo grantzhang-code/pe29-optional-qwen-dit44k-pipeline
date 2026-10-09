@@ -20,3 +20,6 @@ package/workflow/control/
 package/workflow/partition.json
 *.partial
 *.download
+
+# Multi-reference runtime outputs live outside the source tree.
+.mref-venv/

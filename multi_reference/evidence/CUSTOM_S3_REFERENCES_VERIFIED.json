@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "objects": [
+    {
+      "uri": "s3://core-cn-oss.canva.com/usr/fengzhida/mie/v1/refs/full/from500m/part-r057-000244/0081.jpg",
+      "sha256": "1e313b111fac7c2b9f4b14168251306bd1592b9be89f02820e24831c369e9d1a",
+      "bytes": 193588,
+      "width": 549,
+      "height": 768
+    },
+    {
+      "uri": "s3://core-cn-oss.canva.com/usr/fengzhida/mie/v1/refs/full/from100m/part-r034-000799/0038.jpg",
+      "sha256": "4629f343a1fa5cb5aedad89b059718229958bc4304c7623e366d64429c0e5a6f",
+      "bytes": 69488,
+      "width": 639,
+      "height": 640
+    }
+  ],
+  "source": "original S3 objects; independent from embedded MDS image byte hashes",
+  "custom_prepare_pass": true,
+  "prepared_rows": 1,
+  "prepared_input_sha256": "548b2513502d73c437f038d21eb4971ac533bc61dd09f6ef6b21c2e316351440"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "gpu_inference_rerun": false,
+  "objects": [
+    {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/multireference-pe/evaluations/e6d88249d08d-c8000-ocr-eval-h10064-20261007/model/hf/local_export_manifest.json",
+      "bytes": 20128,
+      "sha256": "b0984d2ecaf3a51881f112f1f4530602ff72a4cfbca32a93cff7b1b1de42a943"
+    },
+    {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/multireference-pe/evaluations/e6d88249d08d-c8000-ocr-eval-h10064-20261007/caption/predictions.jsonl",
+      "bytes": 19355259,
+      "sha256": "08b60555b532f5382c133da126a3f2067c3829ebe872be805b8e086819d3f343"
+    }
+  ]
+}

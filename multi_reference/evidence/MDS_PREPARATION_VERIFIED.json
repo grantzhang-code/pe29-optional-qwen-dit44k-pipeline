@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "cases": 419,
+  "reference_occurrences": 2656,
+  "unique_reference_payloads": 2655,
+  "prepared_input_sha256": "9582f761f4e77f3ce09e448eea6f5aaca15a1f88e0e8453dd12b01927e86e6f2",
+  "historical_input_semantics_identical": true,
+  "source": "s3://core-cn-oss.canva.com/usr/josephbai/editing-ocr-repair/full-1k-20260929-v1/region-bound-v5-20260930/delivery-v2/mds/eval/multireference-pkl-v2/",
+  "mds_index_sha256": "4021081103433c3c040b87620f4abcb820e0aa73e4e0dce9ccc96be343269555",
+  "mds_shards": 6,
+  "target_pixels_in_model_input": false,
+  "gpu_inference_rerun": false
+}

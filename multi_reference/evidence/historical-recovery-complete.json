@@ -1,0 +1,29 @@
+{
+  "status": "completed_with_invalid_captions",
+  "checkpoint_step": 8000,
+  "cases": 419,
+  "schema_valid": 418,
+  "json_valid": 419,
+  "raw_schema_valid": 417,
+  "targeted_retries": 2,
+  "replaced_rows": [
+    {
+      "input_index": 191,
+      "sample_id": "multiref-20f0d4d9bc94d1eba59adff9",
+      "original_schema_error": "ValueError: edit group changed element ordering",
+      "retry_attempt": 3,
+      "retry_seed": 100233
+    }
+  ],
+  "still_invalid": [
+    {
+      "input_index": 413,
+      "schema_error": "ValueError: every target element must have exactly one edit"
+    }
+  ],
+  "raw_predictions_sha256": "08b60555b532f5382c133da126a3f2067c3829ebe872be805b8e086819d3f343",
+  "retry_predictions_sha256": "47c34369c88a863fa352ef2b6e877831bced09d1808f82f6b0c7451b79a1ee8e",
+  "predictions_sha256": "c553494bb8ac4ebb3174a7b0ef0033fbf0c9c4c634548b3a779f7b0ad090df0f",
+  "publication_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/multireference-pe/evaluations/e6d88249d08d-c8000-ocr-eval-h10064-20261007/caption/recovery-v1/",
+  "completed_utc": "2026-10-07T23:34:10.863227+00:00"
+}
