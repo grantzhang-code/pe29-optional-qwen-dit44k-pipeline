@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "canary_cases": 4,
+  "retry_cases": 3,
+  "both_rules_exercised": true,
+  "retry_only_on_rule_hits": true
+}

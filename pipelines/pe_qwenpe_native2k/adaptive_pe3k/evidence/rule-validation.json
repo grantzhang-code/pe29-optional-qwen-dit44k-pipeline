@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "checks": {
+    "single_region_6_repeats": true,
+    "single_region_5_below_threshold": true,
+    "two_region_3_rounds": true,
+    "two_region_2_rounds_below_threshold": true,
+    "different_position": true,
+    "different_description": true,
+    "unterminated_string": true,
+    "127_tokens_below_threshold": true,
+    "8_rounds_128_lexical_tokens": true,
+    "7_rounds_below_threshold": true,
+    "[]": true,
+    "null": true,
+    "{\"elements\":null}": true,
+    "{\"elements\":{\"layout\":[null]}}": true
+  },
+  "rules": {
+    "version": "exact_region3x6_string8x128_v1",
+    "region": {
+      "min_repeats": 3,
+      "min_span": 6,
+      "max_period": 32,
+      "ignore_fields": [
+        "label"
+      ]
+    },
+    "string": {
+      "min_repeats": 8,
+      "min_span": 128,
+      "max_period": 256
+    },
+    "lexical_tokenizer": "\\w+(?:[-']\\w+)*|[^\\w\\s]",
+    "calibration": "Thresholds require human-labeled calibration; finite output cannot prove an infinite process."
+  }
+}

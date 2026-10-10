@@ -1,0 +1,125 @@
+{
+  "status": "PASS",
+  "checkpoint_step": 3000,
+  "input_count": 1464,
+  "caption_count": 1464,
+  "images": 1275,
+  "excluded": 189,
+  "pe_checkpoint": "s3://core-cn-oss.canva.com/usr/grantzhang/design-layout-megatron-swift/runs/c29k-step0-b300128-w500/20261009-39c59fafbc35/mcore/checkpoint-3000/",
+  "dit_checkpoint": "s3://core-cn-training.canva.com/pixelcraft/usr/tayo/runs/edit2k-r21-sft-ema20k-15n-1009-0652/checkpoints/step=6000.ckpt/",
+  "weights": "EMA",
+  "denoiser_keys": 463,
+  "cfg": 2.5,
+  "steps": 50,
+  "timeshift": 4.6,
+  "max_pixels": 4194304,
+  "input_order": "trainorder-v2",
+  "encoder_recipe": "Float8CurrentScaling",
+  "use_qwen_pe": true,
+  "sampling": {
+    "strategy": "greedy_then_rule_triggered_official_retry_v1",
+    "greedy": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "top_k": -1,
+      "min_p": 0.0,
+      "presence_penalty": 0.0,
+      "repetition_penalty": 1.0,
+      "frequency_penalty": 0.0,
+      "ignore_eos": false
+    },
+    "retry": {
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "top_k": 20,
+      "min_p": 0.0,
+      "presence_penalty": 1.5,
+      "repetition_penalty": 1.0,
+      "frequency_penalty": 0.0,
+      "ignore_eos": false
+    },
+    "max_retry_attempts": 1,
+    "retry_trigger": "exact_region_sequence_loop_or_long_string_loop",
+    "detection_timing": "after_each_generation",
+    "region_rule": {
+      "min_complete_repeats": 3,
+      "min_total_regions": 6,
+      "max_period": 32,
+      "ignore_fields": [
+        "label"
+      ]
+    },
+    "string_rule": {
+      "min_complete_repeats": 8,
+      "min_lexical_tokens": 128,
+      "max_period": 256
+    },
+    "unresolved_policy": "exclude_from_dit_preserve_all_attempts"
+  },
+  "seed": 42,
+  "fresh_pe_captions": 1464,
+  "fresh_encoding": true,
+  "greedy_loop_hits": 37,
+  "retried": 37,
+  "unresolved_loop_cases": 5,
+  "artifacts": {
+    "caption/predictions.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/caption/predictions.jsonl",
+      "sha256": "6d70aeb2cb0462d6814d1ac48453d5e1a1870c0f6b48ed613636646867f21709",
+      "bytes": 99920945
+    },
+    "caption/greedy-predictions.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/caption/greedy-predictions.jsonl",
+      "sha256": "ee231954b2e46cb2393102cfdada4e8b600d20dd670cc6845f46f27965582cf6",
+      "bytes": 101137014
+    },
+    "caption/retry-predictions.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/caption/retry-predictions.jsonl",
+      "sha256": "ab1cc3f5015dbd37b990f52fbb398effba81d2d4bbd33fd69b66c825e2cd1d07",
+      "bytes": 4360985
+    },
+    "caption/excluded.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/caption/excluded.jsonl",
+      "sha256": "60c6cad8f0d1ff075fd1fda812d824d44b2483801f8ebaae4faaaeed04dfbd08",
+      "bytes": 40684
+    },
+    "editor/score-index.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/editor/score-index.jsonl",
+      "sha256": "f08438ff3710ba453364cbf0d142f01c705e8b75cf0e8ca6ae7ae7e6f5e9325a",
+      "bytes": 5143143
+    },
+    "editor/native-manifest.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/editor/native-manifest.jsonl",
+      "sha256": "faf8be61b8ef8de97b264d73f1f056e49c2230316a30b624d51ddc78f790efd0",
+      "bytes": 4658137
+    },
+    "editor/images.manifest.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/editor/images.manifest.jsonl",
+      "sha256": "10407bd0586e17c54995469807a83e14e6e10c61e63e68a1698342331604d480",
+      "bytes": 472629
+    },
+    "caption/admitted.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/caption/admitted.jsonl",
+      "sha256": "88b587577c8b6f9747d5e4505bbeaf3efcbddedb69fa4f7108af2cccef7032d4",
+      "bytes": 77417193
+    }
+  },
+  "dit_step": 6000,
+  "allocated_h100": 128,
+  "used_h100": 128,
+  "publication_verified": true,
+  "publication_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/",
+  "qwen_rewrites_reused": 1464,
+  "generated_images_reused": 0,
+  "conditioning_bundles_reused": 0,
+  "json_valid": 1436,
+  "schema_valid": 1410,
+  "truncated": 28,
+  "exclusion_reasons": {
+    "native_unsupported_multiple_reference_boxes": 93,
+    "native_spatial_or_token_cap": 40,
+    "repetition_loop_after_retry": 5,
+    "caption_json_or_schema_error": 25,
+    "caption_truncated": 26
+  }
+}

@@ -1,5 +1,7 @@
 # PE-29k · Optional Qwen-PE · Fixed DiT44k
 
+最新流程：**[PE-3k + Qwen-PE（greedy＋重复规则重试）→ DiT 6k / CFG=2.5 → UTP 4×256 GSB](pipelines/pe_qwenpe_native2k/adaptive_pe3k/README.md)**。包含实际推理源码、固定采样配置、新 workspace 恢复/运行入口、1,275 张图的完整 GSB 结果及与 DiT4k 的 1,256 个共有样本对比。
+
 本分支新增 **[PE-3k / PE-4k + Qwen-PE → JSON caption → native DiT 4k / CFG=2.5 → UTP 4×256 GSB](pipelines/pe_qwenpe_native2k/README.md)**。包含独立模型配置、完整执行源码锁、恢复/运行入口、text encoder 顺序检查与已验证结果；两种 PE 配置还提供同 caption 切换 DiT 6k 的流程。
 
 完整的 image-edit 推理交接：用户 instruction → 可选 Qwen-PE 改写 → PE-29k JSON caption → 修复版 DiT44k 编辑生图。

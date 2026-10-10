@@ -1,5 +1,7 @@
 # PE-3k + Qwen-PE 完整流程
 
+**最新独立流程：** [greedy＋重复规则重试 → DiT6k / CFG2.5](adaptive_pe3k/README.md)。全量 1,275 张图、2,550 次 GSB 判断通过验证；与本页 DiT4k 基线共有 1,256 个样本。caption 策略也有变化，与下方仅切换 DiT 的实验分别记录。
+
 训练任务：`39c59fafbc35` / **checkpoint-3000**。使用冻结 Qwen-PE 改写，重新推理 JSON caption，再以 **DiT step=4000 EMA / CFG=2.5 / 50 steps / native 2K / timeshift=4.6** 编辑生图，最后通过 **UTP 4 workers × 256 并发**做 AB/BA GSB。
 
 - [逐步恢复、canary、生图、评分命令](README.md)

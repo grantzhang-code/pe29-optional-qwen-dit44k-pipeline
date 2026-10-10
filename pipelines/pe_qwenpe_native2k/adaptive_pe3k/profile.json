@@ -1,0 +1,113 @@
+{
+  "version": "pe3k-greedy-loop-retry-dit6k-v1",
+  "pe_run": "39c59fafbc35",
+  "pe_step": 3000,
+  "input_count": 1464,
+  "input_sha256": "854033ce2de5e5203574a8e49f0e31de0c3b24618ec9405bbeddf2110f2ced98",
+  "qwen_predictions_sha256": "528ee56b1090a2c4841a661057cf863778618e18f10a2a7b6a20393828dd56c2",
+  "qwen_predictions_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/9c4d29-qwenrewrite-dit44k-fixed-20261007/inputs/qwen-pe-predictions.jsonl",
+  "prompt_sha256": "11fea93c330ccd076075001a7af52bf3713975a85a29dc442b23bab0317ab91e",
+  "caption_checkpoint": {
+    "checkpoint_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/design-layout-megatron-swift/runs/c29k-step0-b300128-w500/20261009-39c59fafbc35/mcore/checkpoint-3000/",
+    "checkpoint_step": 3000,
+    "checkpoint_manifest_sha256": "4fcb930ecd45582ad744d4bf406c4a2f18b9fb9cbd49d70c2c67c6ec39b47c5b",
+    "initial_artifact_uri": "s3://core-cn-oss.canva.com/usr/joeyzhang/design-layout-megatron-swift/models/qwen35-4b-base-hf-mtp-851bf6e-v1/",
+    "initial_artifact_manifest_sha256": "d355542d67dbc5deb206034c0782daec202f57828bae79b79478417add2c750e",
+    "publication_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/",
+    "dit_checkpoint_uri": "s3://core-cn-training.canva.com/pixelcraft/usr/tayo/runs/edit2k-r21-sft-ema20k-15n-1009-0652/checkpoints/step=6000.ckpt/",
+    "pe_run": "39c59fafbc35",
+    "num_nodes": 16,
+    "use_qwen_pe": true,
+    "cfg": 2.5,
+    "steps": 50,
+    "timeshift": 4.6,
+    "max_pixels": 4194304,
+    "dit_weight_namespace": "state_dict.ema_denoiser.",
+    "dit_expected_keys": 463,
+    "encoder_recipe": "Float8CurrentScaling",
+    "upstream_encoder_recipe": "MXFP8BlockScaling",
+    "hardware_adaptation": "H100 recipe from requested pipeline; not bit-identical to B300 MXFP8 encoding",
+    "model_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-caption-euc1-h100128-20261009/model/hf/",
+    "export_manifest_sha256": "cbec7dab0a6ee7310009475f12a59c825c7ccc170bb297b89e33726b9962f78d"
+  },
+  "sampling": {
+    "strategy": "greedy_then_rule_triggered_official_retry_v1",
+    "greedy": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "top_k": -1,
+      "min_p": 0.0,
+      "presence_penalty": 0.0,
+      "repetition_penalty": 1.0,
+      "frequency_penalty": 0.0,
+      "ignore_eos": false
+    },
+    "retry": {
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "top_k": 20,
+      "min_p": 0.0,
+      "presence_penalty": 1.5,
+      "repetition_penalty": 1.0,
+      "frequency_penalty": 0.0,
+      "ignore_eos": false
+    },
+    "max_retry_attempts": 1,
+    "retry_trigger": "exact_region_sequence_loop_or_long_string_loop",
+    "detection_timing": "after_each_generation",
+    "region_rule": {
+      "min_complete_repeats": 3,
+      "min_total_regions": 6,
+      "max_period": 32,
+      "ignore_fields": [
+        "label"
+      ]
+    },
+    "string_rule": {
+      "min_complete_repeats": 8,
+      "min_lexical_tokens": 128,
+      "max_period": 256
+    },
+    "unresolved_policy": "exclude_from_dit_preserve_all_attempts"
+  },
+  "generation_source": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/",
+  "reference_dit4k_source": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/",
+  "gsb_source": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/gsb-vs-qwen21/",
+  "bundles": {
+    "generation": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/reproduction/code-3ebdc512776c45576590acadfd4be4e5e380936af2b6a94ed6c698ff07f469cb.tar.gz",
+      "sha256": "3ebdc512776c45576590acadfd4be4e5e380936af2b6a94ed6c698ff07f469cb",
+      "bytes": 19573708
+    },
+    "gsb": {
+      "sha256": "62c9fccfce772e2510420ed763fa217ac272419907cdd38f19cde56421b4ecaa",
+      "status": "PASS",
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/gsb-vs-qwen21/code/bundle-62c9fccfce772e2510420ed763fa217ac272419907cdd38f19cde56421b4ecaa.tar.gz",
+      "bytes": 3616423
+    }
+  },
+  "inference": {
+    "dit_step": 6000,
+    "dit_checkpoint": "s3://core-cn-training.canva.com/pixelcraft/usr/tayo/runs/edit2k-r21-sft-ema20k-15n-1009-0652/checkpoints/step=6000.ckpt/",
+    "ema_keys": 463,
+    "dit_checkpoint_sha256": "d127f698f9651117c1e8587200c84927b7d3ef3963a3cd561172e3390946e87c",
+    "cfg": 2.5,
+    "steps": 50,
+    "timeshift": 4.6,
+    "max_pixels": 4194304,
+    "input_order": "trainorder-v2",
+    "seed": 42
+  },
+  "gsb": {
+    "workers": 4,
+    "concurrency_per_worker": 256,
+    "total_concurrency": 1024,
+    "model": "gemini-3.8-flash",
+    "thinking_level": "LOW",
+    "double_order": true
+  },
+  "topology": {
+    "nodes": 16,
+    "gpus_per_node": 8
+  }
+}

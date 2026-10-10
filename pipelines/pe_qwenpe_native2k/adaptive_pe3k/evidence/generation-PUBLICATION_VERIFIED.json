@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "verified_at": 1791618286.9282696,
+  "dit_checkpoint_proof_sha256": "d127f698f9651117c1e8587200c84927b7d3ef3963a3cd561172e3390946e87c",
+  "arms": {
+    "3000": {
+      "status": "PASS",
+      "images": 1275,
+      "image_bytes": 5438146809,
+      "restore_proofs": 128,
+      "prepared_input_archives": [
+        {
+          "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/00/reproduction/prepared-inputs.tar.gz",
+          "sha256": "8ec416e2a791720d217fac787c3139679ecafd4c0581a802bf696f0a4a291574",
+          "bytes": 3247650,
+          "files": 469
+        },
+        {
+          "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/01/reproduction/prepared-inputs.tar.gz",
+          "sha256": "cf54c4f4764994e8d838958475bc233c401b24c955be257ec532e4a4939e7ca2",
+          "bytes": 2901152,
+          "files": 447
+        },
+        {
+          "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/02/reproduction/prepared-inputs.tar.gz",
+          "sha256": "7e2ca53880055a0185ba52e629cf793d039648a4c689c9686ef8c758b7db7c90",
+          "bytes": 3117771,
+          "files": 481
+        },
+        {
+          "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/03/reproduction/prepared-inputs.tar.gz",
+          "sha256": "cecf5fef1d79cc3c4112e5df86ab9502ecd43b5cef0801472b2f9ed0b29aceb6",
+          "bytes": 3038079,
+          "files": 458
+        },
+        {
+          "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/04/reproduction/prepared-inputs.tar.gz",
+          "sha256": "98ae6e689fefda60347c171f2a6ff785203f8449a0fed035019a3629209de5aa",
+          "bytes": 3075074,
+          "files": 487
+        },
+        {
+          "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/05/reproduction/prepared-inputs.tar.gz",
+          "sha256": "4a6cd85bd22c08bd6637a7064be627f4dfa01ab04d89ef5e43b2a6533a7c2416",
+          "bytes": 2902875,
+          "files": 464
+        },
+        {
+          "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/06/reproduction/prepared-inputs.tar.gz",
+          "sha256": "2af955afd72d43c631ae6555a302c058ee82a5b4f8b064f8d316c3f180dda0d8",
+          "bytes": 2876211,
+          "files": 481
+        },
+        {
+          "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/07/reproduction/prepared-inputs.tar.gz",
+          "sha256": "6626bb3d119729b3fae87e8ad3ba872a20dd47f4f7235157f4ab2845051b0273",
+          "bytes": 2841677,
+          "files": 465
+        },
+        {
+          "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/08/reproduction/prepared-inputs.tar.gz",
+          "sha256": "ace98fdaafe7ab33782bda25bc60a5a65787505d32da24655e07721a058136be",
+          "bytes": 2966722,
+          "files": 461
+        },
+        {
+          "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/09/reproduction/prepared-inputs.tar.gz",
+          "sha256": "dab5ac0854c6435d7e359e7e8cca65d8b49f894f0168f9b57270b0edc63191d4",
+          "bytes": 3089672,
+          "files": 481
+        },
+        {
+          "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/10/reproduction/prepared-inputs.tar.gz",
+          "sha256": "248356d17d1e004bc51bf620574df6b5e1f8770961883b1c3df6ae800014893f",
+          "bytes": 2787149,
+          "files": 462
+        },
+        {
+          "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/11/reproduction/prepared-inputs.tar.gz",
+          "sha256": "54eacd21fd7d4c988d959b6ebcff7103087e6fb3fa8fe40ccbd873f6c4329605",
+          "bytes": 3278955,
+          "files": 465
+        },
+        {
+          "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/12/reproduction/prepared-inputs.tar.gz",
+          "sha256": "100c88b682b10bd35bc883a967ef04cda73c21558e4bc63894d6c925344d21ce",
+          "bytes": 3109993,
+          "files": 457
+        },
+        {
+          "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/13/reproduction/prepared-inputs.tar.gz",
+          "sha256": "0d80f82a9796bc2a605592ce39b09ba449356f0af7ed44f20e77334994abf9df",
+          "bytes": 3163585,
+          "files": 483
+        },
+        {
+          "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/14/reproduction/prepared-inputs.tar.gz",
+          "sha256": "abcbdcb15b4f153b5d09439b1b9e3e61419d5c061032067caf608a66a0ac2c25",
+          "bytes": 2850007,
+          "files": 457
+        },
+        {
+          "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/15/reproduction/prepared-inputs.tar.gz",
+          "sha256": "232da894b95d1ac4641f4e5077871b3fc19924d19e5e9dd28fa736144352cbc9",
+          "bytes": 2789224,
+          "files": 457
+        }
+      ],
+      "all_s3_sha256_match": true,
+      "all_receipts_match": true
+    }
+  }
+}

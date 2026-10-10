@@ -1,0 +1,131 @@
+{
+  "reason": "device4 sustained 87C and 420MHz with image throughput lag",
+  "observed": {
+    "stage": "generating",
+    "counts": [
+      {
+        "shard": 0,
+        "completed": 8,
+        "total": 11
+      },
+      {
+        "shard": 1,
+        "completed": 9,
+        "total": 11
+      },
+      {
+        "shard": 2,
+        "completed": 8,
+        "total": 11
+      },
+      {
+        "shard": 3,
+        "completed": 8,
+        "total": 10
+      },
+      {
+        "shard": 4,
+        "completed": 2,
+        "total": 10
+      },
+      {
+        "shard": 5,
+        "completed": 9,
+        "total": 9
+      },
+      {
+        "shard": 6,
+        "completed": 8,
+        "total": 10
+      },
+      {
+        "shard": 7,
+        "completed": 8,
+        "total": 9
+      }
+    ],
+    "gpu": "0, 70, 1470\n1, 62, 1500\n2, 59, 1470\n3, 72, 1515\n4, 87, 345\n5, 38, 345\n6, 60, 1440\n7, 53, 1980\n"
+  },
+  "stopped_pids": [
+    1379827,
+    1379828,
+    1401537,
+    1401538,
+    1401546,
+    1401551,
+    1401553,
+    1401561,
+    1401564
+  ],
+  "time": 1791617727.1606855,
+  "recovery_script_sha256": "be2663152948d6da81a0f8ca31d47a84c49d5f9831725c55e17525e4c3ade4d3",
+  "existing_images": 60,
+  "remaining_images": 21,
+  "assignments": [
+    {
+      "device": 0,
+      "request_ids": [
+        "954b68cc-a64d-4d71-b979-ed1d3c38f8bf",
+        "red__1072",
+        "red__454"
+      ]
+    },
+    {
+      "device": 1,
+      "request_ids": [
+        "f0726fa8-cf50-4301-9363-94bbd12baacf",
+        "red__1199",
+        "red__512"
+      ]
+    },
+    {
+      "device": 2,
+      "request_ids": [
+        "pcv2__l10n__006",
+        "red__1318",
+        "red__546"
+      ]
+    },
+    {
+      "device": 3,
+      "request_ids": [
+        "da__99226f90-0f31-4ac2-9307-ad65c149e6c6",
+        "red__1526",
+        "red__709"
+      ]
+    },
+    {
+      "device": 5,
+      "request_ids": [
+        "g2__openset_000034",
+        "red__206",
+        "red__744"
+      ]
+    },
+    {
+      "device": 6,
+      "request_ids": [
+        "pcplus__audience__009",
+        "red__24",
+        "red__841"
+      ]
+    },
+    {
+      "device": 7,
+      "request_ids": [
+        "pcv2__chart__018",
+        "red__324",
+        "red__930"
+      ]
+    }
+  ],
+  "policy": "Keep completed image hashes; reuse current-run conditioning; preserve native sampler, seed, and checkpoint.",
+  "recovery_source": {
+    "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/nodes/02/reproduction/thermal_recovery.py",
+    "sha256": "be2663152948d6da81a0f8ca31d47a84c49d5f9831725c55e17525e4c3ade4d3",
+    "bytes": 3203
+  },
+  "status": "PASS",
+  "completed_at": 1791618009.2508686,
+  "existing_images_unchanged": true
+}

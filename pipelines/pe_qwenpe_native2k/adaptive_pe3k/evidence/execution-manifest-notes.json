@@ -1,0 +1,53 @@
+{
+  "authoritative_execution_configuration": "deployment/campaign.json",
+  "source_bundle_sha256": "3ebdc512776c45576590acadfd4be4e5e380936af2b6a94ed6c698ff07f469cb",
+  "instruction_validation_metadata": "deployment/package/workflow/campaign.json",
+  "inherited_descriptive_fields_not_read_by_runtime": {
+    "campaign": "pe3k-qwenpe-official-sampling-dit4k-cfg25",
+    "caption_retry_policy": "first_pass_official_sampling_only",
+    "output_s3": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-official-sampling-dit4k-cfg25-euc1-h100128-20261010/"
+  },
+  "effective_sampling": {
+    "strategy": "greedy_then_rule_triggered_official_retry_v1",
+    "greedy": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "top_k": -1,
+      "min_p": 0.0,
+      "presence_penalty": 0.0,
+      "repetition_penalty": 1.0,
+      "frequency_penalty": 0.0,
+      "ignore_eos": false
+    },
+    "retry": {
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "top_k": 20,
+      "min_p": 0.0,
+      "presence_penalty": 1.5,
+      "repetition_penalty": 1.0,
+      "frequency_penalty": 0.0,
+      "ignore_eos": false
+    },
+    "max_retry_attempts": 1,
+    "retry_trigger": "exact_region_sequence_loop_or_long_string_loop",
+    "detection_timing": "after_each_generation",
+    "region_rule": {
+      "min_complete_repeats": 3,
+      "min_total_regions": 6,
+      "max_period": 32,
+      "ignore_fields": [
+        "label"
+      ]
+    },
+    "string_rule": {
+      "min_complete_repeats": 8,
+      "min_lexical_tokens": 128,
+      "max_period": 256
+    },
+    "unresolved_policy": "exclude_from_dit_preserve_all_attempts"
+  },
+  "effective_dit_checkpoint": "s3://core-cn-training.canva.com/pixelcraft/usr/tayo/runs/edit2k-r21-sft-ema20k-15n-1009-0652/checkpoints/step=6000.ckpt/",
+  "effective_publication_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-greedy-loop-retry-dit6k-cfg25-euc1-h100128-20261010/",
+  "verification": "The inference sampler is selected by PE_SAMPLING_MODE, worker routing by the root campaign, and native DiT by the explicit step6000 argument. Canary receipts verify these choices."
+}

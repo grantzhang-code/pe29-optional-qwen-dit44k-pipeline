@@ -1,0 +1,5 @@
+scope,arm,checkpoint_step,dimension,n,good,similar,bad,net_win_rate,win_rate_excluding_similar,position_disagreements
+all_valid,pe39c59_qwenpe_c3000_greedy_loop_retry_dit6k_s6000_ema_cfg25,3000,consistency,1275,384,385,506,-0.09568627450980392,0.4314606741573034,363
+all_valid,pe39c59_qwenpe_c3000_greedy_loop_retry_dit6k_s6000_ema_cfg25,3000,quality,1275,303,406,566,-0.20627450980392156,0.3486766398158803,359
+common_all_valid,pe39c59_qwenpe_c3000_greedy_loop_retry_dit6k_s6000_ema_cfg25,3000,consistency,1275,384,385,506,-0.09568627450980392,0.4314606741573034,363
+common_all_valid,pe39c59_qwenpe_c3000_greedy_loop_retry_dit6k_s6000_ema_cfg25,3000,quality,1275,303,406,566,-0.20627450980392156,0.3486766398158803,359

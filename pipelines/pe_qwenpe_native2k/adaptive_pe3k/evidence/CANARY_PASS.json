@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "images": 3,
+  "caption_count": 4,
+  "excluded": 1,
+  "native_rejected": [],
+  "index_sha256": "23d84f7ecff8ea3aa43579ee1766295b38b70552fd444e6a28ace97ea4c0c748",
+  "training_prompt_sha256": "11fea93c330ccd076075001a7af52bf3713975a85a29dc442b23bab0317ab91e",
+  "checkpoint_step": 3000,
+  "dit_step": 6000
+}

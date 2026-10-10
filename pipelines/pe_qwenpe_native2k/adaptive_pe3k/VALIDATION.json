@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "source_bundle_restore": true,
+  "source_manifest_files": 1047,
+  "historical_output_prefix_rejected": true,
+  "workflow_descriptive_fields_corrected": true,
+  "recorded_inference_code_unchanged": true,
+  "offline_gsb_pairs": 1275,
+  "offline_gsb_judgments": 2550,
+  "pairs_per_worker": {
+    "0": 319,
+    "1": 319,
+    "2": 319,
+    "3": 318
+  },
+  "gsb_worker_sha256": "cd6c24a4ca68de0911d7be79bd2449b60a889d159836b8ed1a576f96c866c244",
+  "arnold_dry_run": true,
+  "arnold_submitted": false,
+  "new_gpu_run": false,
+  "historical_gpu_and_gsb_full_audits": "PASS",
+  "repetition_boundary_smoke_checks": 5,
+  "gsb_result_scope": "1275 complete AB/BA pairs",
+  "common_comparison_cases": 1256
+}

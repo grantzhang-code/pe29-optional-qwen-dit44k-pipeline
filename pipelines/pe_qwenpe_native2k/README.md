@@ -1,5 +1,7 @@
 # PE-3k / PE-4k + Qwen-PE → native 2K DiT → UTP 4×256 GSB
 
+**新增独立实验：** [PE-3k greedy＋规则重试 → DiT6k](adaptive_pe3k/README.md)，完成 1,275 张图片和 2,550 次 GSB 判断。该入口重新生成 caption，仅对两种重复规则命中的样本重试；下文的原始 greedy-only 与同 caption 切换 DiT 流程继续保留。
+
 本目录记录训练 run `39c59fafbc35` 的完整流程。`pe3k` 对应 checkpoint-3000，`pe4k` 对应 checkpoint-4000。两者各有独立模型锁和实际执行源码包；旧版 PE-29k / DiT44k 入口仍在仓库根目录。
 
 **PE-3k 入口：** [PE3K.md](PE3K.md)，模型配置为 [profiles/pe3k.json](profiles/pe3k.json)。下方命令默认使用 PE-3k。切换 PE-4k 时将 `PE_PROFILE` 改为 `pe4k`，并使用新的 workspace 和 S3 前缀。

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "images_verified": 1275,
+  "root_schema_order_preserved": true,
+  "retained_layout_order_preserved": true,
+  "actual_encoder_prompt_hashes_match_image_receipts": true,
+  "preparation_version": "trainorder-v2-native2k-v1"
+}
