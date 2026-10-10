@@ -17,7 +17,7 @@
 | DiT | `edit2k-r21-sft-ema20k-15n-1009-0652/checkpoints/step=6000.ckpt/` 原生 DCP |
 | 权重 | `state_dict.ema_denoiser.*`，463 键，strict restore |
 | 生图 | EMA、CFG=2.5、50 steps、native 2K、max_pixels=4194304、timeshift=4.6、seed=42 |
-| Encoder | trainorder-v2；H100 Float8CurrentScaling |
+| Encoder | trainorder-v2；H100；旧日志标记 Float8CurrentScaling（实际前向配方未捕获） |
 | GSB | Gemini 3.8 Flash / LOW / temperature=0；AB/BA；Qwen-Image 2.1 CFG1 对照 |
 | UTP | 4 indexed CPU workers，每个 256 并发上限；每个 80 CPU / 180Gi |
 
@@ -150,3 +150,7 @@ python3 pipelines/pe_qwenpe_native2k/verify_release.py
 ```
 
 完整 GPU 推理和评分证据来自已完成的历史实验。新增恢复包装入口另外完成本地源码包恢复、配置隔离、评分包重建、四分片完整覆盖和 Arnold dry-run 验证，详见 [VALIDATION.json](VALIDATION.json)。本次发布没有重新提交 GPU 或评分任务。
+
+### 历史 FP8 证据的限制
+
+冻结的历史 helper 构造 `Float8CurrentScaling` 并写入证据，但没有把该对象显式传给 `te.fp8_model_init` 或 native 的 `te.fp8_autocast`。因此旧记录中的 `fp8_recipe_class` 是声明值，不能单独证明实际前向配方。2026-10-10 核验同一 H100 运行环境（TE 2.16.0）时，其未覆盖的默认配方为 `DelayedScaling`。历史代码、图片和 GSB 数据保持原样，复现时应保留这一限制；新版 R21 H100 适配在独立运行中显式绑定初始化/前向配方并检查每个 TE Linear。
