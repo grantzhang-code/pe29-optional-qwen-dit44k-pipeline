@@ -39,7 +39,20 @@ s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59
 
 源码见 [recorded/pe3k/dit6000/](recorded/pe3k/dit6000/)，完整部署包及 SHA256 见 [profiles/pe3k.json](profiles/pe3k.json)。本页上方的 GSB 指标对应 DiT4k。
 
-DiT6000 生图已完成：**1,258 张，206 条排除记录**，S3 全量校验与 text encoder 顺序审计均 PASS。与 DiT4000 的 caption、样本集合及 conditioning 一致；1,258 张输出均重新生成且 hash 改变。证据见 [生成汇总](evidence/pe3k/dit6000-generation-summary.json)、[顺序审计](evidence/pe3k/dit6000-encoder-order-summary.json) 和 [同 caption 对照](evidence/pe3k/dit6000-same-caption-dit-comparison.json)。本次 PE-3k + DiT6000 未进行 GSB。
+DiT6000 生图已完成：**1,258 张，206 条排除记录**，S3 全量校验与 text encoder 顺序审计均 PASS。与 DiT4000 的 caption、样本集合及 conditioning 一致；1,258 张输出均重新生成且 hash 改变。证据见 [生成汇总](evidence/pe3k/dit6000-generation-summary.json)、[顺序审计](evidence/pe3k/dit6000-encoder-order-summary.json) 和 [同 caption 对照](evidence/pe3k/dit6000-same-caption-dit-comparison.json)。
+
+DiT6000 的 GSB 使用 `prepare_gsb.py --profile pe3k --dit-step 6000`；完整命令见运行说明第 7 节。沿用同一 Qwen-Image-2.1 CFG1 基线和 judge，UTP 4×256；1,258 对样本分为 315/315/314/314，合计 2,516 次 AB/BA 判断。
+
+本次评分按用户要求取消最后一条未完成请求，并排除其缺少一个方向的样本。正式统计 **1,257 个完整 AB/BA 样本、2,514 次判断**，审计 PASS 仅适用于此范围；原始计划为 1,258 个样本。已保存的 2,515 条原始判断全部保留，其中被排除样本的单方向结果不计入指标。原协议未修改，任务已取消；后续仅汇总已保存判断。详见 [排除说明](evidence/pe3k/dit6000-gsb-exclusion-summary.json)、[验证回执](evidence/pe3k/dit6000-GSB_VERIFIED.json) 和 [只汇总已有判断的脚本](recorded/pe3k/dit6000_gsb/finalize_authorized_partial.py)。
+
+与 PE-3k + DiT4000 的相同 **1,257 个样本**比较，均分别对同一 Qwen 基线评分：
+
+| 维度 | DiT4000 G/S/B | DiT6000 G/S/B | DiT4000 净胜率 | DiT6000 净胜率 | 6k−4k |
+|---|---|---|---:|---:|---:|
+| 一致性 | 377/378/502 | 372/380/505 | −9.94% | −10.58% | −0.64 pp |
+| 视觉质量 | 296/399/562 | 310/378/569 | −21.16% | −20.60% | +0.56 pp |
+
+机器可读结果：[DiT6000 GSB 指标](evidence/pe3k/dit6000-gsb-metrics.json)、[共有样本比较](evidence/pe3k/dit6000-gsb-common-cohorts.json)。S3 生图前缀下的 `gsb-vs-qwen21/` 包含 `scores.jsonl`、`summary.json`、`metrics.csv`、`VERIFIED.json` 和明确记录排除样本的 `EXCLUSIONS.json`。
 
 ```text
 s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit6k-s6000-cfg25-euc1-h100128-20261010/editor/score-index.jsonl

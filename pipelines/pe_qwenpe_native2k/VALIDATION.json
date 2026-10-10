@@ -17,7 +17,22 @@
       },
       "judge_functions_unchanged": true,
       "historical_output_overwrite_rejected": true,
-      "dit6000_cache_override_verified": true
+      "dit6000_cache_override_verified": true,
+      "dit6000_gsb": {
+        "status": "PASS",
+        "pairs": 1258,
+        "judgments": 2516,
+        "worker_pair_counts": {
+          "0": 315,
+          "1": 315,
+          "2": 314,
+          "3": 314
+        },
+        "judge_functions_unchanged": true,
+        "workers": 4,
+        "concurrency_per_worker": 256,
+        "new_submission": false
+      }
     },
     "pe4k": {
       "restored_bundle_stages": [
@@ -52,7 +67,7 @@
       }
     }
   },
-  "python_files_parsed": 55,
+  "python_files_parsed": 61,
   "bash_blocks_syntax_checked": 7,
   "new_gpu_inference_during_packaging": false,
   "new_gsb_submission_during_packaging": false,
@@ -85,7 +100,12 @@
       "same_caption_conditioning": "PASS",
       "encoder_order": "PASS",
       "images": 1258,
-      "gsb": "not_requested"
+      "gsb": "PASS_for_user_authorized_complete_pairs",
+      "gsb_pairs": 1257,
+      "gsb_judgments": 2514,
+      "gsb_expected_pairs": 1258,
+      "gsb_user_excluded_pairs": 1,
+      "full_gsb_run_complete": false
     }
   }
 }

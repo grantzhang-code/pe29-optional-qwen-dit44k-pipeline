@@ -1,0 +1,15 @@
+{
+  "status": "user_requested_exclusion",
+  "original_protocol_sha256": "e67e349c5d4718eb38a21cc53b106aff18376ebf6f854bf64f2d9eb09495ccf6",
+  "expected_pairs": 1258,
+  "expected_judgments": 2516,
+  "scored_pairs": 1257,
+  "scored_judgments": 2514,
+  "saved_judgments": 2515,
+  "completed_before_stop": 2515,
+  "omitted_orphan_judgments": 1,
+  "reason": "User requested dropping the final outstanding request; exclude its entire incomplete AB/BA pair.",
+  "finalizer_sha256": "55ec7ab93d85dcbeefb207544c5de80493f4a74a99f6d6c9718a1ca6589e7bc7",
+  "user_request": "丢掉最后一条请求",
+  "exclusions_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit6k-s6000-cfg25-euc1-h100128-20261010/gsb-vs-qwen21/EXCLUSIONS.json"
+}

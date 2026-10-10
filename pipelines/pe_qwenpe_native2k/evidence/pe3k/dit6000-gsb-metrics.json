@@ -1,0 +1,40 @@
+{
+  "status": "complete_with_exclusion",
+  "full_run_complete": false,
+  "pairs": 1257,
+  "judgments": 2514,
+  "requested_pairs": 1258,
+  "requested_judgments": 2516,
+  "completed_judgments": 2515,
+  "excluded_scoring_cases": 1,
+  "omitted_orphan_judgments": 1,
+  "cancelled_judgments": 1,
+  "publication_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit6k-s6000-cfg25-euc1-h100128-20261010/gsb-vs-qwen21/",
+  "workers": 4,
+  "concurrency_per_worker": 256,
+  "total_concurrency": 1024,
+  "original_job_status": "cancelled_by_user_request",
+  "exclusion_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit6k-s6000-cfg25-euc1-h100128-20261010/gsb-vs-qwen21/EXCLUSIONS.json",
+  "comparisons": {
+    "pe39c59_qwenpe_c3000_dit6k_s6000_ema_cfg25": {
+      "consistency": {
+        "bad": 505,
+        "good": 372,
+        "n": 1257,
+        "net_win_rate": -0.10580747812251393,
+        "position_disagreements": 355,
+        "similar": 380,
+        "win_rate_excluding_similar": 0.4241733181299886
+      },
+      "quality": {
+        "bad": 569,
+        "good": 310,
+        "n": 1257,
+        "net_win_rate": -0.2060461416070008,
+        "position_disagreements": 324,
+        "similar": 378,
+        "win_rate_excluding_similar": 0.35267349260523323
+      }
+    }
+  }
+}

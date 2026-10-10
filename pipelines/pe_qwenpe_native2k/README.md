@@ -162,11 +162,11 @@ python3 "$PE_TOOLS/materialize.py" --profile pe3k --stage dit6000 \
 
 缓存只读；`CHECKPOINT.json` SHA256 固定为 `d127f698f9651117c1e8587200c84927b7d3ef3963a3cd561172e3390946e87c`，任一文件缺失或校验失败均停止。按第 5 节执行时，将 `run_node.py --root` 改为 `$PE_WORK/dit6000`。
 
-PE-4k + DiT6000 使用独立评分协议，仍为同一 Qwen 基线、同一 rubric 和 UTP 4×256。生成验证通过后，评分入口如下；JobSet 写到 `utp-dit6000/`，后续 Arnold dry-run、提交和验证沿用第 6 节。PE-3k 的 DiT6000 配置当前仅包括生图。
+PE-3k / PE-4k + DiT6000 各自使用独立评分协议，仍为同一 Qwen 基线、同一 rubric 和 UTP 4×256。生成验证通过后，评分入口如下；JobSet 写到 `utp-dit6000/`，后续 Arnold dry-run、提交和验证沿用第 6 节。`PE_PROFILE` 与该 workspace 的 caption、生图配置必须一致。
 
 ```bash
 export GSB_JOB=YOUR_UNIQUE_DIT6K_GSB_JOB
-python3 "$PE_TOOLS/prepare_gsb.py" --profile pe4k --dit-step 6000 \
+python3 "$PE_TOOLS/prepare_gsb.py" --profile "$PE_PROFILE" --dit-step 6000 \
   --workspace "$PE_WORK" --job-name "$GSB_JOB"
 arnold submit -f "$PE_WORK/utp-dit6000/jobset.yaml" --application-id core-cn \
   --project-id pixelcraftbench --cluster p-iad-eagle --namespace b-core-cn-prod \
@@ -186,6 +186,8 @@ PE-4k + DiT6000 已完成 1,256 张图片、2,512 次 GSB 判断，最终验证 
 | 视觉质量 | 304/400/552 | 302/398/556 | −19.75% | −20.22% | −0.48 pp |
 
 完整指标与验证回执见 [DiT6000 GSB 指标](evidence/pe4k/dit6000-gsb-metrics.json)、[共有样本比较](evidence/pe4k/dit6000-gsb-common-cohorts.json) 和 [GSB 验证](evidence/pe4k/dit6000-GSB_VERIFIED.json)。
+
+PE-3k + DiT6000 的 UTP 4×256 评分已按用户要求停止最后一条请求，排除对应的未完成 AB/BA 样本。正式结果为 **1,257 个样本、2,514 次判断**，该范围审计 PASS；原始计划 1,258 个样本，已保存 2,515 条判断，保留的单方向记录不计入指标。指标、与 DiT4000 的共有样本对比及排除证据见 [PE3K.md](PE3K.md#复用同一-caption-切换-dit-6k)。常规恢复命令仍覆盖完整 1,258 对样本，不会自动排除样本。
 
 ## 8. 验证边界
 
