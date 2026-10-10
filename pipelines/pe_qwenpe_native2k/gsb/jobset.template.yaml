@@ -1,0 +1,155 @@
+apiVersion: jobset.x-k8s.io/v1alpha2
+kind: JobSet
+metadata:
+  name: ${arnold_job_name}
+  labels:
+    app.canva.k8s/application-id: ${arnold_application_id}
+    app.canva.k8s/component-type: ml-trainer
+    kueue.x-k8s.io/queue-name: ${arnold_application_id}-default-queue
+    kueue.x-k8s.io/priority-class: standard-priority
+spec:
+  successPolicy:
+    operator: All
+    targetReplicatedJobs:
+    - workers
+  failurePolicy:
+    maxRestarts: 0
+    rules:
+    - action: FailJobSet
+      targetReplicatedJobs:
+      - workers
+  replicatedJobs:
+  - name: workers
+    replicas: 1
+    template:
+      metadata:
+        labels: &id001
+          app.canva.k8s/application-id: ${arnold_application_id}
+          app.canva.k8s/component-type: ml-trainer
+      spec:
+        completionMode: Indexed
+        completions: 1
+        parallelism: 1
+        backoffLimit: 2
+        podFailurePolicy:
+          rules:
+          - action: Ignore
+            onPodConditions:
+            - type: DisruptionTarget
+              status: 'True'
+        template:
+          metadata:
+            labels: *id001
+          spec:
+            serviceAccountName: ${arnold_application_id}-model-trainer
+            restartPolicy: Never
+            affinity:
+              nodeAffinity:
+                requiredDuringSchedulingIgnoredDuringExecution:
+                  nodeSelectorTerms:
+                  - matchExpressions:
+                    - key: karpenter.sh/capacity-type
+                      operator: In
+                      values:
+                      - on-demand
+                    - key: karpenter.k8s.aws/instance-category
+                      operator: NotIn
+                      values:
+                      - g
+                      - gr
+                      - p
+                      - i
+                      - d
+                      - h
+                    - key: karpenter.k8s.aws/instance-size
+                      operator: In
+                      values:
+                      - 24xlarge
+                      - 32xlarge
+                      - 48xlarge
+                    - key: node.canva.k8s/dedicated
+                      operator: In
+                      values:
+                      - ai-efa-accelerated
+                    - key: kubernetes.io/arch
+                      operator: In
+                      values:
+                      - amd64
+              podAntiAffinity:
+                requiredDuringSchedulingIgnoredDuringExecution:
+                - labelSelector:
+                    matchLabels:
+                      app.canva.k8s/component-type: ml-trainer
+                  namespaceSelector: {}
+                  topologyKey: kubernetes.io/hostname
+            tolerations:
+            - effect: NoSchedule
+              key: dedicated
+              operator: Equal
+              value: ai-efa-accelerated
+            containers:
+            - name: worker
+              image: 699983977898.dkr.ecr.us-east-1.amazonaws.com/ds-core-cn-omra-trainer@sha256:c393e94e1e08b6fcda33825d91414470b0badb59f1899e47a77ad27692853a98
+              command:
+              - python3
+              - -u
+              - -c
+              - 'import boto3,hashlib,io,tarfile,os,pathlib,sys
+
+                from urllib.parse import urlsplit
+
+                u=urlsplit(''s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe17-qwenrewrite-gpt25canvas-dit48k-cfg2-vs-qwen21-gsb-g38low-256-20261003/code/bundle-57ce79ab0c1221f68ff8df7b4f2825312f23ca04e7c9f8627cc928ad406cf309.tar.gz'')
+
+                data=boto3.client(''s3'',region_name=''us-east-1'').get_object(Bucket=u.netloc,Key=u.path.lstrip(''/''))[''Body''].read()
+
+                assert hashlib.sha256(data).hexdigest()==''57ce79ab0c1221f68ff8df7b4f2825312f23ca04e7c9f8627cc928ad406cf309''
+
+                root=pathlib.Path(''/tmp/pcb-gsb-score'');root.mkdir(parents=True,exist_ok=True)
+
+                with tarfile.open(fileobj=io.BytesIO(data),mode=''r:gz'') as archive:archive.extractall(root,filter=''data'')
+
+                os.execv(sys.executable,[sys.executable,''-u'',str(root/''driver.py'')])
+
+                '
+              env:
+              - name: CANVA_FLAVOR
+                value: prod
+              - name: FLAVOR
+                value: prod
+              - name: CANVA_PLATFORM
+                value: eks
+              - name: PIP_CONSTRAINT
+                value: ''
+              - name: PYTHONUNBUFFERED
+                value: '1'
+              - name: AWS_REGION
+                value: us-east-1
+              - name: AWS_DEFAULT_REGION
+                value: us-east-1
+              - name: GOOGLE_CLOUD_PROJECT
+                value: cnvprd-core-cn-npd
+              - name: GOOGLE_CLOUD_LOCATION
+                value: global
+              - name: GOOGLE_GENAI_USE_VERTEXAI
+                value: 'True'
+              - name: GOOGLE_WIF_AUDIENCE
+                value: //iam.googleapis.com/projects/653103247366/locations/global/workloadIdentityPools/vertex-wif/providers/wif-provider
+              - name: GOOGLE_WIF_SERVICE_ACCOUNT
+                value: vertex@cnvprd-core-cn-npd.iam.gserviceaccount.com
+              - name: CANVA_CLUSTER_STORAGE_PATH
+                value: /mnt/shared_storage/jobs/${arnold_job_name}/gsb
+              - name: SCORE_WORKER_RANK
+                value: '0'
+              - name: OMP_NUM_THREADS
+                value: '1'
+              resources:
+                requests:
+                  cpu: '80'
+                  memory: 180Gi
+              volumeMounts:
+              - name: shared-storage
+                mountPath: /mnt/shared_storage
+            volumes:
+            - name: shared-storage
+              persistentVolumeClaim:
+                claimName: core-cn-ml-trainer-efs-anyscale

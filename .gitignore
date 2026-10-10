@@ -20,3 +20,4 @@ package/workflow/control/
 package/workflow/partition.json
 *.partial
 *.download
+pipelines/pe_qwenpe_native2k/.validation-work/

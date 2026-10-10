@@ -1,3 +1,6 @@
 *.so binary
 *.tar.gz binary
 *.jsonl linguist-generated=true
+# Keep recorded GSB templates byte-identical for asserted source replacements.
+pipelines/pe_qwenpe_native2k/gsb/templates/*/prepare.py whitespace=-blank-at-eol
+pipelines/pe_qwenpe_native2k/gsb/templates/*/finalize.py whitespace=-blank-at-eol

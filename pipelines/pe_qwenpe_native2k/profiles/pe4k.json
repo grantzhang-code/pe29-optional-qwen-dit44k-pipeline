@@ -1,0 +1,231 @@
+{
+  "pe_run": "39c59fafbc35",
+  "pe_step": 4000,
+  "caption_checkpoint": {
+    "checkpoint_step": 4000,
+    "initial_artifact_uri": "s3://core-cn-oss.canva.com/usr/joeyzhang/design-layout-megatron-swift/models/qwen35-4b-base-hf-mtp-851bf6e-v1/",
+    "initial_artifact_manifest_sha256": "d355542d67dbc5deb206034c0782daec202f57828bae79b79478417add2c750e",
+    "checkpoint_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/design-layout-megatron-swift/runs/c29k-step0-b300128-w500/20261009-39c59fafbc35/mcore/checkpoint-4000/",
+    "checkpoint_manifest_sha256": "f275001113fd234cee2eebadf20d55d6b484ad25e90db9a431beee7f8c4e19fe",
+    "pe_run": "39c59fafbc35",
+    "publication_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-caption-euc1-h100128-20261009/",
+    "model_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-caption-euc1-h100128-20261009/model/hf/",
+    "export_manifest_sha256": "852f6391b489f445d705a322ef6a60c8b6bbe946053bf7f244333ac62f113242",
+    "num_nodes": 16,
+    "use_qwen_pe": true
+  },
+  "caption_source": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-caption-euc1-h100128-20261009/",
+  "generation_source": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/",
+  "input_count": 1464,
+  "input_sha256": "854033ce2de5e5203574a8e49f0e31de0c3b24618ec9405bbeddf2110f2ced98",
+  "qwen_predictions_sha256": "528ee56b1090a2c4841a661057cf863778618e18f10a2a7b6a20393828dd56c2",
+  "prompt": "luna_source_target_size_ordered_sparse_reference_edits_v1",
+  "prompt_sha256": "11fea93c330ccd076075001a7af52bf3713975a85a29dc442b23bab0317ab91e",
+  "inference": {
+    "dit_step": 4000,
+    "ema_keys": 463,
+    "namespace": "state_dict.ema_denoiser.",
+    "cfg": 2.5,
+    "sampling_steps": 50,
+    "timeshift": 4.6,
+    "max_pixels": 4194304,
+    "seed": 42,
+    "input_order": "trainorder-v2",
+    "encoder_recipe": "Float8CurrentScaling"
+  },
+  "allocated_h100": 128,
+  "healthy_h100": 127,
+  "gpu_ids": {
+    "0": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "1": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "2": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7
+    ],
+    "3": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "4": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "5": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "6": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "7": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "8": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "9": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "10": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "11": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "12": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "13": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "14": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "15": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "nodes": 16,
+  "bundles": {
+    "caption": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-caption-euc1-h100128-20261009/reproduction/code-5752e3ed49ccd8a0ca108271e3b2cf7567ddc13fffdb62aec3f2d53da64becd8.tar.gz",
+      "sha256": "5752e3ed49ccd8a0ca108271e3b2cf7567ddc13fffdb62aec3f2d53da64becd8",
+      "bytes": 8736641
+    },
+    "dit4000": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/reproduction/code-da24f48673a1c4bce2697808bc99ad4c0c58fffab62f44ba908dd52fbdf43bb5.tar.gz",
+      "sha256": "da24f48673a1c4bce2697808bc99ad4c0c58fffab62f44ba908dd52fbdf43bb5",
+      "bytes": 21283441
+    },
+    "dit6000": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-dit6k-s6000-cfg25-euc1-h100128-20261010/reproduction/code-a024b25e0ea48d6e48b23966595ec23236f7c105a6bd7d4ffa37209d8856f556.tar.gz",
+      "sha256": "a024b25e0ea48d6e48b23966595ec23236f7c105a6bd7d4ffa37209d8856f556",
+      "bytes": 21274754
+    },
+    "gsb": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/gsb-vs-qwen21/code/bundle-58646262a0b737361a55d622764e63e2a27c5871a7e84b9bb7eda32dc0fff1de.tar.gz",
+      "sha256": "58646262a0b737361a55d622764e63e2a27c5871a7e84b9bb7eda32dc0fff1de",
+      "bytes": 3405660
+    }
+  },
+  "gsb": {
+    "workers": 4,
+    "concurrency_per_worker": 256,
+    "judge": "gemini-3.8-flash",
+    "thinking": "LOW",
+    "double_order": true,
+    "baseline": "qwen_image21_cfg1",
+    "protocol_sha256": "343096922b34ec99571fd41094298f74eaf9d7371bea5b3f85104deb71355d28"
+  }
+}

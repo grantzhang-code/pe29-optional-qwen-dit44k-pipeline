@@ -1,0 +1,171 @@
+{
+  "checkpoint_step": 4000,
+  "comparisons": {
+    "pe29_qwenpe": {
+      "common_cases": 1244,
+      "current_cases": 1256,
+      "metrics": {
+        "consistency": {
+          "current": {
+            "bad": 522,
+            "good": 361,
+            "n": 1244,
+            "net_win_rate": -0.12942122186495178,
+            "similar": 361
+          },
+          "net_win_change_percentage_points": 8.27974276527331,
+          "reference": {
+            "bad": 574,
+            "good": 310,
+            "n": 1244,
+            "net_win_rate": -0.21221864951768488,
+            "similar": 360
+          }
+        },
+        "quality": {
+          "current": {
+            "bad": 547,
+            "good": 298,
+            "n": 1244,
+            "net_win_rate": -0.20016077170418006,
+            "similar": 399
+          },
+          "net_win_change_percentage_points": -2.572347266881028,
+          "reference": {
+            "bad": 515,
+            "good": 298,
+            "n": 1244,
+            "net_win_rate": -0.17443729903536978,
+            "similar": 431
+          }
+        }
+      },
+      "reference_cases": 1435
+    },
+    "pe39c59_c1000_qwenpe": {
+      "common_cases": 1164,
+      "current_cases": 1256,
+      "metrics": {
+        "consistency": {
+          "current": {
+            "bad": 486,
+            "good": 336,
+            "n": 1164,
+            "net_win_rate": -0.12886597938144329,
+            "similar": 342
+          },
+          "net_win_change_percentage_points": 3.178694158075604,
+          "reference": {
+            "bad": 511,
+            "good": 324,
+            "n": 1164,
+            "net_win_rate": -0.16065292096219932,
+            "similar": 329
+          }
+        },
+        "quality": {
+          "current": {
+            "bad": 515,
+            "good": 283,
+            "n": 1164,
+            "net_win_rate": -0.19931271477663232,
+            "similar": 366
+          },
+          "net_win_change_percentage_points": 3.951890034364261,
+          "reference": {
+            "bad": 545,
+            "good": 267,
+            "n": 1164,
+            "net_win_rate": -0.23883161512027493,
+            "similar": 352
+          }
+        }
+      },
+      "reference_cases": 1261
+    },
+    "pe39c59_c2000_qwenpe": {
+      "common_cases": 1191,
+      "current_cases": 1256,
+      "metrics": {
+        "consistency": {
+          "current": {
+            "bad": 501,
+            "good": 344,
+            "n": 1191,
+            "net_win_rate": -0.13182199832073888,
+            "similar": 346
+          },
+          "net_win_change_percentage_points": -0.08396305625524847,
+          "reference": {
+            "bad": 501,
+            "good": 345,
+            "n": 1191,
+            "net_win_rate": -0.1309823677581864,
+            "similar": 345
+          }
+        },
+        "quality": {
+          "current": {
+            "bad": 525,
+            "good": 285,
+            "n": 1191,
+            "net_win_rate": -0.20151133501259447,
+            "similar": 381
+          },
+          "net_win_change_percentage_points": 0.0,
+          "reference": {
+            "bad": 520,
+            "good": 280,
+            "n": 1191,
+            "net_win_rate": -0.20151133501259447,
+            "similar": 391
+          }
+        }
+      },
+      "reference_cases": 1288
+    },
+    "pe39c59_c3000_qwenpe": {
+      "common_cases": 1178,
+      "current_cases": 1256,
+      "metrics": {
+        "consistency": {
+          "current": {
+            "bad": 494,
+            "good": 344,
+            "n": 1178,
+            "net_win_rate": -0.1273344651952462,
+            "similar": 340
+          },
+          "net_win_change_percentage_points": -1.3582342954159596,
+          "reference": {
+            "bad": 478,
+            "good": 344,
+            "n": 1178,
+            "net_win_rate": -0.11375212224108659,
+            "similar": 356
+          }
+        },
+        "quality": {
+          "current": {
+            "bad": 518,
+            "good": 284,
+            "n": 1178,
+            "net_win_rate": -0.19864176570458403,
+            "similar": 376
+          },
+          "net_win_change_percentage_points": 1.7826825127334467,
+          "reference": {
+            "bad": 528,
+            "good": 273,
+            "n": 1178,
+            "net_win_rate": -0.2164685908319185,
+            "similar": 377
+          }
+        }
+      },
+      "reference_cases": 1258
+    }
+  },
+  "meaning": "Each candidate versus identical frozen Qwen controls on common samples, not direct candidate versus candidate judgments.",
+  "status": "PASS"
+}

@@ -1,5 +1,7 @@
 # PE-29k · Optional Qwen-PE · Fixed DiT44k
 
+本分支新增 **[PE-3k / PE-4k + Qwen-PE → JSON caption → native DiT 4k / CFG=2.5 → UTP 4×256 GSB](pipelines/pe_qwenpe_native2k/README.md)**。包含独立模型配置、完整执行源码锁、恢复/运行入口、text encoder 顺序检查与已验证结果；PE-4k 还提供同 caption 切换 DiT 6k 的流程。
+
 完整的 image-edit 推理交接：用户 instruction → 可选 Qwen-PE 改写 → PE-29k JSON caption → 修复版 DiT44k 编辑生图。
 
 本仓库对应 **2026-10-09 v2**，保留 S3 发布包的原始内容与 SHA256 校验文件。

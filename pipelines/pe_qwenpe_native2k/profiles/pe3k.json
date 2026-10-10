@@ -1,0 +1,226 @@
+{
+  "pe_run": "39c59fafbc35",
+  "pe_step": 3000,
+  "caption_checkpoint": {
+    "checkpoint_step": 3000,
+    "initial_artifact_uri": "s3://core-cn-oss.canva.com/usr/joeyzhang/design-layout-megatron-swift/models/qwen35-4b-base-hf-mtp-851bf6e-v1/",
+    "initial_artifact_manifest_sha256": "d355542d67dbc5deb206034c0782daec202f57828bae79b79478417add2c750e",
+    "checkpoint_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/design-layout-megatron-swift/runs/c29k-step0-b300128-w500/20261009-39c59fafbc35/mcore/checkpoint-3000/",
+    "checkpoint_manifest_sha256": "4fcb930ecd45582ad744d4bf406c4a2f18b9fb9cbd49d70c2c67c6ec39b47c5b",
+    "pe_run": "39c59fafbc35",
+    "publication_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-caption-euc1-h100128-20261009/",
+    "model_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-caption-euc1-h100128-20261009/model/hf/",
+    "export_manifest_sha256": "cbec7dab0a6ee7310009475f12a59c825c7ccc170bb297b89e33726b9962f78d",
+    "num_nodes": 16,
+    "use_qwen_pe": true
+  },
+  "caption_source": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-caption-euc1-h100128-20261009/",
+  "generation_source": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/",
+  "input_count": 1464,
+  "input_sha256": "854033ce2de5e5203574a8e49f0e31de0c3b24618ec9405bbeddf2110f2ced98",
+  "qwen_predictions_sha256": "528ee56b1090a2c4841a661057cf863778618e18f10a2a7b6a20393828dd56c2",
+  "prompt": "luna_source_target_size_ordered_sparse_reference_edits_v1",
+  "prompt_sha256": "11fea93c330ccd076075001a7af52bf3713975a85a29dc442b23bab0317ab91e",
+  "inference": {
+    "dit_step": 4000,
+    "ema_keys": 463,
+    "namespace": "state_dict.ema_denoiser.",
+    "cfg": 2.5,
+    "sampling_steps": 50,
+    "timeshift": 4.6,
+    "max_pixels": 4194304,
+    "seed": 42,
+    "input_order": "trainorder-v2",
+    "encoder_recipe": "Float8CurrentScaling"
+  },
+  "allocated_h100": 128,
+  "healthy_h100": 127,
+  "gpu_ids": {
+    "0": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "1": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "2": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7
+    ],
+    "3": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "4": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "5": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "6": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "7": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "8": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "9": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "10": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "11": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "12": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "13": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "14": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "15": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "nodes": 16,
+  "bundles": {
+    "caption": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-caption-euc1-h100128-20261009/reproduction/code-1c5a66d2654a5bfbdf8bded212b1ca57f20fc90580d762a5b6953311e350fd35.tar.gz",
+      "sha256": "1c5a66d2654a5bfbdf8bded212b1ca57f20fc90580d762a5b6953311e350fd35",
+      "bytes": 8736684
+    },
+    "dit4000": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/reproduction/code-dc03f528714124da02525c929f170a7862c02c4dd261491908035b9880110bc6.tar.gz",
+      "sha256": "dc03f528714124da02525c929f170a7862c02c4dd261491908035b9880110bc6",
+      "bytes": 21283189
+    },
+    "gsb": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/gsb-vs-qwen21/code/bundle-041929999935fd9caa9844ff0c30caa636dceca002055bb50a1d3beb5d45dc48.tar.gz",
+      "sha256": "041929999935fd9caa9844ff0c30caa636dceca002055bb50a1d3beb5d45dc48",
+      "bytes": 3420986
+    }
+  },
+  "gsb": {
+    "workers": 4,
+    "concurrency_per_worker": 256,
+    "judge": "gemini-3.8-flash",
+    "thinking": "LOW",
+    "double_order": true,
+    "baseline": "qwen_image21_cfg1",
+    "protocol_sha256": "073a1cd0cab0516e9c7ad9c9c85bfe9d147f19f5a3876a4319b710eac35691e6"
+  }
+}

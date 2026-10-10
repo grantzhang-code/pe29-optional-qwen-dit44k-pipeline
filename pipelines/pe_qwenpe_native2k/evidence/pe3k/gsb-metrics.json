@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "pairs": 1258,
+  "judgments": 2516,
+  "comparisons": {
+    "pe39c59_qwenpe_c3000_dit4k_s4000_ema_cfg25": {
+      "consistency": {
+        "bad": 502,
+        "good": 377,
+        "n": 1258,
+        "net_win_rate": -0.09936406995230525,
+        "position_disagreements": 354,
+        "similar": 379,
+        "win_rate_excluding_similar": 0.42889647326507396
+      },
+      "quality": {
+        "bad": 563,
+        "good": 296,
+        "n": 1258,
+        "net_win_rate": -0.212241653418124,
+        "position_disagreements": 346,
+        "similar": 399,
+        "win_rate_excluding_similar": 0.3445867287543655
+      }
+    }
+  },
+  "publication_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/gsb-vs-qwen21/"
+}

@@ -1,0 +1,260 @@
+{
+  "Qwen3.8-27B": {
+    "source": "s3://core-cn-oss.canva.com/checkpoints/qwen/Qwen3.8-27B/",
+    "objects": [
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/chat_template.jinja",
+        "name": "chat_template.jinja",
+        "bytes": 8952,
+        "etag": "\"519239a4908bb1f805bbce5fa8c8a242\"",
+        "sha256": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041",
+        "version_id": "mDLBHatRlGW3IP_v2LfsyPytsAJXiM05"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/config.json",
+        "name": "config.json",
+        "bytes": 4312,
+        "etag": "\"0ecc077f5c9eb49889aa0022f4ae9fa7\"",
+        "sha256": "191e0af232104ed8b65258cf3fb2b842e288008baca7633c11b82a1ac7203aab",
+        "version_id": "_Dc170ueD6lwe9Dn48rejrhfNGTYvi2n"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/crc32.txt",
+        "name": "crc32.txt",
+        "bytes": 238,
+        "etag": "\"569c7523056e1894a2bb5ef0a62c2d3a\"",
+        "sha256": "b42dd291f5f98b05807e458f5b47849969a9b3326acbf0c97d28b05826740b83",
+        "version_id": "_xINMlTlja6j07nCJOEkZwR5b9d.FS3L"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/generation_config.json",
+        "name": "generation_config.json",
+        "bytes": 202,
+        "etag": "\"efeaa00fbdbaaa33be52e9373c35da5f\"",
+        "sha256": "e70c136c1b78ddc1fb0905bac8e733a4dc448d4f852a5dd75143fffc70be550e",
+        "version_id": "5SUFEJJrbC.I1h1qTa8XpBncDNuKXcWp"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/merges.txt",
+        "name": "merges.txt",
+        "bytes": 3353259,
+        "etag": "\"bc43d7e04aa9cbafa49f74301bfcad93\"",
+        "sha256": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d",
+        "version_id": "GhonRkwLEewic4DyMOb0u0gDI1rQKXhq"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00001-of-00018.safetensors",
+        "name": "model-00001-of-00018.safetensors",
+        "bytes": 3966730552,
+        "etag": "\"1b3487bb02458b29c0803b8c35ab6d04-473\"",
+        "sha256": "ba0ce20aae489ad196733da5064bcdf159a1fe84f53336648196e1ebb7751b1c",
+        "version_id": "wvnfjw3ac5VDevzNc6t5bia41jJwflS1"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00002-of-00018.safetensors",
+        "name": "model-00002-of-00018.safetensors",
+        "bytes": 3043080328,
+        "etag": "\"7d12333ae8f9bd8d586de91433806def-363\"",
+        "sha256": "06a148c01bfbe3faa14a5f184a7ff29a706f7ae1c8b2705d2058e26d17a001fb",
+        "version_id": "KEFKtTNejalrUbY7bjxq3j8CCgRWig88"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00003-of-00018.safetensors",
+        "name": "model-00003-of-00018.safetensors",
+        "bytes": 2542796952,
+        "etag": "\"6e3f79722a59f14cc2eaa5800b56f301-304\"",
+        "sha256": "2e1bf62cbcd406eaa64b60d10353e1f0ef4039d0976e56f05cabe953454f9968",
+        "version_id": "2_r9RgnDFFFNEYEN.up_H_k.9zOOcP90"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00004-of-00018.safetensors",
+        "name": "model-00004-of-00018.safetensors",
+        "bytes": 3988973152,
+        "etag": "\"5f6de68acef4c2bfd8979ded109a1152-476\"",
+        "sha256": "511e34063187882659753c4d93f3859f93c019fd438d8813071921c81d9a3f1a",
+        "version_id": ".7r87FnMj8wwoLACqq.F.QvrOs_9NypL"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00005-of-00018.safetensors",
+        "name": "model-00005-of-00018.safetensors",
+        "bytes": 2099339864,
+        "etag": "\"74e88d7be2bfd34257cb0edbd72604ac-251\"",
+        "sha256": "635cb53446dc74f219740fc59e18b774f877b803b9722e289ca62575a6efa701",
+        "version_id": "sjxuiq5RDh7Jb3uBZkKUQXuT6CouFpjc"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00006-of-00018.safetensors",
+        "name": "model-00006-of-00018.safetensors",
+        "bytes": 3979553696,
+        "etag": "\"f0c772d596c04aa4c602088b6422522f-475\"",
+        "sha256": "0bc5214fac607f0e6cc92eec3789d4b8559410ef9fce66621ba8158e8410dae0",
+        "version_id": "fAIrBjc8PulZ0AjI5vS.nkFLXfo_4xnr"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00007-of-00018.safetensors",
+        "name": "model-00007-of-00018.safetensors",
+        "bytes": 2108759344,
+        "etag": "\"519b81decb48452e42a8e2e8d34defd7-252\"",
+        "sha256": "80b0c49033e9a0d5762562aa12f4acdb7f54da586f3d0110f28c48d91cf07892",
+        "version_id": "SJ3Z4Y_itYB2YYu3VEZnChlqJaOl1deo"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00008-of-00018.safetensors",
+        "name": "model-00008-of-00018.safetensors",
+        "bytes": 3979553696,
+        "etag": "\"137db9828ccb4e21daa082ee609ea6f1-475\"",
+        "sha256": "7192c5b66185d3592927daabee1cc19e6f6e0ce75988ee20e824b624765fda79",
+        "version_id": "xwtkXFjbPFGygiEVdlmxbgjVzlG92IEB"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00009-of-00018.safetensors",
+        "name": "model-00009-of-00018.safetensors",
+        "bytes": 2108759344,
+        "etag": "\"65953794edc270f6d8f1bacc1c4e0891-252\"",
+        "sha256": "af3c48cc37af44f3db6ae0579baf019180d48d9c527caa0a1f03ff85813a56d8",
+        "version_id": "untzg_iDzwv5ftOkroc3fXNSaDvaPcgH"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00010-of-00018.safetensors",
+        "name": "model-00010-of-00018.safetensors",
+        "bytes": 3979553696,
+        "etag": "\"302d0ae32c9c95ad02540722db83c53f-475\"",
+        "sha256": "163490a76f3bea3a40855b7efc04ce6d27afaf1a34f0bbde495b9491f76457c9",
+        "version_id": "1oyizHuqZkdOUrb5DlC6ibEMSjmMSzw1"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00011-of-00018.safetensors",
+        "name": "model-00011-of-00018.safetensors",
+        "bytes": 2108759344,
+        "etag": "\"6730ca03805fa39530bbea4743022d3b-252\"",
+        "sha256": "5f3ae1b948aeee39da77aec558e8236cd65fe4d7cb7686a76bb007acc563c6d8",
+        "version_id": "NFj4lIO6QkolCJZWT76mMy9Iyq23NaIr"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00012-of-00018.safetensors",
+        "name": "model-00012-of-00018.safetensors",
+        "bytes": 3979553696,
+        "etag": "\"25b5c96178d1af94031e3755e70ed871-475\"",
+        "sha256": "a3de1c7114677a8f5ac5c4892c90e8238ea5c1e2038c80e757dfc87c3902ca55",
+        "version_id": "iQvlxQ22bB2OudbKvHG.cM6QbZ1IjSUN"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00013-of-00018.safetensors",
+        "name": "model-00013-of-00018.safetensors",
+        "bytes": 2108759344,
+        "etag": "\"a639bc262861c9f74c14fb403495e038-252\"",
+        "sha256": "06ab79a41f74c9c5cb734816feb0c7fc364104b227165ee7391231e1155aa02a",
+        "version_id": "qZSedVcvUyk0mAIjrFcCI_i65ESYP6mD"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00014-of-00018.safetensors",
+        "name": "model-00014-of-00018.safetensors",
+        "bytes": 3979553696,
+        "etag": "\"f6405a0b42bff3182398e68c162c8cf7-475\"",
+        "sha256": "4138ed94603065ba884bbcadedb04d7718bb40117e85e6f5c6fc5b9c05b7a85b",
+        "version_id": "Mu.prRPYtdKpJLb3YNLgolZDib92QPlH"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00015-of-00018.safetensors",
+        "name": "model-00015-of-00018.safetensors",
+        "bytes": 2108759344,
+        "etag": "\"d4f9d25ba15a18e1109ab35d33ef5cd5-252\"",
+        "sha256": "69224e27b9de4e7dbf6fc936c6eaae08447bda3b80a6c31a871ab451173afd22",
+        "version_id": "UHzwQHND6Jf0aU5HO0FVnHIN3cAy4nlT"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00016-of-00018.safetensors",
+        "name": "model-00016-of-00018.safetensors",
+        "bytes": 3979564040,
+        "etag": "\"484063ae7da8c5eeef8c52c945c46f2d-475\"",
+        "sha256": "73cb9a1089fb6155cb648609478d6633be8a5c7d9ca5a05bc8925ce8a553cefe",
+        "version_id": "MTpJPiRsZXhmerfqPsy3dhZzgXt1WRe0"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00017-of-00018.safetensors",
+        "name": "model-00017-of-00018.safetensors",
+        "bytes": 2108759344,
+        "etag": "\"fb7efd49f31faf7a3e4ede71f414f9c6-252\"",
+        "sha256": "beb51f01056142ac4984bd800507b0dd0fd18de57f8e9ef6ea41d1a3598983a8",
+        "version_id": "fbYXZQJAb5vq.S9y0PSnKSqsLipYgD0G"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model-00018-of-00018.safetensors",
+        "name": "model-00018-of-00018.safetensors",
+        "bytes": 3392197344,
+        "etag": "\"8c204c6f238d0d1c2a7376ec0d696d72-405\"",
+        "sha256": "1d3479509e21494658f9b64d317f5ea8e55c4025d28c702d6c4d0b356ce8ea06",
+        "version_id": "b_094_osIIfuZ2QeZc7bBsRoJuegDU3I"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/model.safetensors.index.json",
+        "name": "model.safetensors.index.json",
+        "bytes": 112216,
+        "etag": "\"c588258aef4e840e97522aa4f6ec8ed2\"",
+        "sha256": "77042094076611b69791a610065f28b7013b8c621795fa86ddccc8bac7d1b9df",
+        "version_id": "2UsWB4dO0RaetkJ8diFutvPdlFSf9tSE"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/preprocessor_config.json",
+        "name": "preprocessor_config.json",
+        "bytes": 390,
+        "etag": "\"7bcaedf726a05924595b0302d0dd4dc7\"",
+        "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+        "version_id": "lABu21glYTPpxW.oRfhd.55zcRqTXJTE"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/tokenizer.json",
+        "name": "tokenizer.json",
+        "bytes": 12809320,
+        "etag": "\"5c9483427b15add1926fabdb631e5d55-2\"",
+        "sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3",
+        "version_id": "qoAlT3WfgT3gpoPmd4szKar5nPU3l8FC"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/tokenizer_config.json",
+        "name": "tokenizer_config.json",
+        "bytes": 17928,
+        "etag": "\"e843642217637a5738bc9b86021a3eef\"",
+        "sha256": "b11349aafa7cdc6a320767cf7ceb29ed82f7eda5d65e8e0819e76f0ce947bf27",
+        "version_id": "VfFnoPpFyMtkybZwQlyQkdN6IxaI74QD"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/video_preprocessor_config.json",
+        "name": "video_preprocessor_config.json",
+        "bytes": 385,
+        "etag": "\"41bc84d7aa7087995e0b8fd3c0a29dfa\"",
+        "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+        "version_id": "3fKICpYyegs4HqC4yZ4yGlmcuGZgyFrV"
+      },
+      {
+        "key": "checkpoints/qwen/Qwen3.8-27B/vocab.json",
+        "name": "vocab.json",
+        "bytes": 6722759,
+        "etag": "\"4e976260d822eb1335417fe34309be3f\"",
+        "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003",
+        "version_id": "Eb6YsZrFWmWik6pwqXXip29BTMGdCNTq"
+      }
+    ]
+  },
+  "FLUX.2-klein-4B-vae": {
+    "source": "s3://core-cn-oss.canva.com/checkpoints/flux2/FLUX.2-klein-4B-vae/",
+    "objects": [
+      {
+        "key": "checkpoints/flux2/FLUX.2-klein-4B-vae/config.json",
+        "name": "config.json",
+        "bytes": 864,
+        "etag": "\"0fc813f5e9025c0d70c8797a637c9bf4\"",
+        "sha256": "3073c96f5ae67320f629c6c82d1d3f2fe6388748f3478f507b3d0526dc0e6a79",
+        "version_id": "lsu_bYQuq1f3B0rVPnVuN1zfB7AtF1mU"
+      },
+      {
+        "key": "checkpoints/flux2/FLUX.2-klein-4B-vae/diffusion_pytorch_model.safetensors",
+        "name": "diffusion_pytorch_model.safetensors",
+        "bytes": 336213556,
+        "etag": "\"f312f0a1a65b7de6c4e342dfabf998d7-41\"",
+        "sha256": "a1a1d5853ac41046b487a817571a04febb3cfbbef3018c144cf42c44527e508f",
+        "version_id": "oX55.u1m5jEux8WXhPUMSp8tqBvi0nsw"
+      }
+    ]
+  }
+}

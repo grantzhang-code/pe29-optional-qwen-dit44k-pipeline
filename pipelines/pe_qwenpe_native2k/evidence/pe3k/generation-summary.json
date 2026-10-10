@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "checkpoint_step": 3000,
+  "input_count": 1464,
+  "caption_count": 1464,
+  "images": 1258,
+  "excluded": 206,
+  "pe_checkpoint": "s3://core-cn-oss.canva.com/usr/grantzhang/design-layout-megatron-swift/runs/c29k-step0-b300128-w500/20261009-39c59fafbc35/mcore/checkpoint-3000/",
+  "dit_checkpoint": "s3://core-cn-training.canva.com/pixelcraft/usr/tayo/runs/edit2k-r21-sft-ema20k-15n-1009-0652/checkpoints/step=4000.ckpt/",
+  "weights": "EMA",
+  "denoiser_keys": 463,
+  "cfg": 2.5,
+  "steps": 50,
+  "timeshift": 4.6,
+  "max_pixels": 4194304,
+  "input_order": "trainorder-v2",
+  "encoder_recipe": "Float8CurrentScaling",
+  "use_qwen_pe": true,
+  "artifacts": {
+    "caption/predictions.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/caption/predictions.jsonl",
+      "sha256": "b0400634b3af84d4e55a7b7c1c72c59700f5f5791d47b639ba85931a76ba4912",
+      "bytes": 100703456
+    },
+    "caption/excluded.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/caption/excluded.jsonl",
+      "sha256": "920ed8148e2ec886556669b6bd96783bae7f026d54efe85bc2b92e902cda18ee",
+      "bytes": 45256
+    },
+    "editor/score-index.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/editor/score-index.jsonl",
+      "sha256": "c24de3c00e17d6f9070e0fe08a7dac6f3060c39556db72d1948b6aba7717641d",
+      "bytes": 5049005
+    },
+    "editor/native-manifest.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/editor/native-manifest.jsonl",
+      "sha256": "53f8e794665c1083292bdfde8949e6379bd8b928b3a9ed82cef438035564a360",
+      "bytes": 4615074
+    },
+    "editor/images.manifest.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/editor/images.manifest.jsonl",
+      "sha256": "ea222d56a9893c2ac062f98ba596e6b59b034b4e119b8b921a231f7ac1c87367",
+      "bytes": 451185
+    },
+    "caption/admitted.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/caption/admitted.jsonl",
+      "sha256": "42481e4e5634bfcf636cf3fe765d80a04f241872873f3e3ece616753da32b02b",
+      "bytes": 74617358
+    }
+  },
+  "dit_step": 4000,
+  "allocated_h100": 128,
+  "used_h100": 127,
+  "publication_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/",
+  "publication_verified": true,
+  "training_prompt": "luna_source_target_size_ordered_sparse_reference_edits_v1",
+  "training_prompt_sha256": "11fea93c330ccd076075001a7af52bf3713975a85a29dc442b23bab0317ab91e",
+  "qwen_pe_predictions_sha256": "528ee56b1090a2c4841a661057cf863778618e18f10a2a7b6a20393828dd56c2",
+  "caption_source_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-caption-euc1-h100128-20261009/",
+  "same_caption_file_sha256": true,
+  "reused_conditioning_bundles": 0,
+  "generated_images_reused": 0,
+  "exclusion_reasons": {
+    "native_unsupported_multiple_reference_boxes": 88,
+    "caption_truncated": 48,
+    "native_spatial_or_token_cap": 44,
+    "caption_json_or_schema_error": 26
+  }
+}

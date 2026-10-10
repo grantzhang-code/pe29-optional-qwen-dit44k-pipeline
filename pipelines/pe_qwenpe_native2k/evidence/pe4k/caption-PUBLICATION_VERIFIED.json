@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "caption_cases": 1464,
+  "all_published_files_read_back_sha256": true,
+  "artifacts": {
+    "caption/predictions.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-caption-euc1-h100128-20261009/caption/predictions.jsonl",
+      "sha256": "8371f299ccb5133778409711f85fbd4c0f033cef54f153b32cca22312a0eed1b",
+      "bytes": 102157606
+    },
+    "caption/valid.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-caption-euc1-h100128-20261009/caption/valid.jsonl",
+      "sha256": "45904d7fc1b8b1581492fcc98a4444e060f20b201fb88023fe3453d1e47d7aa9",
+      "bytes": 89863024
+    },
+    "caption/excluded.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-caption-euc1-h100128-20261009/caption/excluded.jsonl",
+      "sha256": "70d7445633c640a8dd507cfec9aad5c24ce1b5217af2e259a721a564c5142d6d",
+      "bytes": 18044
+    },
+    "inputs/pe-inputs.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-caption-euc1-h100128-20261009/inputs/pe-inputs.jsonl",
+      "sha256": "854033ce2de5e5203574a8e49f0e31de0c3b24618ec9405bbeddf2110f2ced98",
+      "bytes": 6021993
+    },
+    "inputs/qwen-pe-predictions.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-caption-euc1-h100128-20261009/inputs/qwen-pe-predictions.jsonl",
+      "sha256": "528ee56b1090a2c4841a661057cf863778618e18f10a2a7b6a20393828dd56c2",
+      "bytes": 31888082
+    },
+    "inputs/original.jsonl": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-caption-euc1-h100128-20261009/inputs/original.jsonl",
+      "sha256": "dcadb3cde9b3d37d45008cc89aa6b5057201ab051fcdc1804a756181cdab8f03",
+      "bytes": 1972509
+    },
+    "campaign.json": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-caption-euc1-h100128-20261009/campaign.json",
+      "sha256": "fa9fc743788a858b3802a9f8f013816adf27d56061379a1e1a8d77fd09557f11",
+      "bytes": 4844
+    }
+  },
+  "complete": {
+    "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-caption-euc1-h100128-20261009/COMPLETE.json",
+    "sha256": "62054d162729307ae30c295c98fdf9f3e8115a7a82325868b1b82ab81e7b8060",
+    "bytes": 2829
+  }
+}

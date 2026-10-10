@@ -1,0 +1,236 @@
+{
+  "arms": {
+    "4000": {
+      "checkpoint": {
+        "checkpoint_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/design-layout-megatron-swift/runs/c29k-step0-b300128-w500/20261009-39c59fafbc35/mcore/checkpoint-4000/",
+        "checkpoint_step": 4000,
+        "checkpoint_manifest_sha256": "f275001113fd234cee2eebadf20d55d6b484ad25e90db9a431beee7f8c4e19fe",
+        "initial_artifact_uri": "s3://core-cn-oss.canva.com/usr/joeyzhang/design-layout-megatron-swift/models/qwen35-4b-base-hf-mtp-851bf6e-v1/",
+        "initial_artifact_manifest_sha256": "d355542d67dbc5deb206034c0782daec202f57828bae79b79478417add2c750e",
+        "publication_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/",
+        "dit_checkpoint_uri": "s3://core-cn-training.canva.com/pixelcraft/usr/tayo/runs/edit2k-r21-sft-ema20k-15n-1009-0652/checkpoints/step=4000.ckpt/",
+        "pe_run": "39c59fafbc35",
+        "num_nodes": 16,
+        "use_qwen_pe": true,
+        "cfg": 2.5,
+        "steps": 50,
+        "timeshift": 4.6,
+        "max_pixels": 4194304,
+        "dit_weight_namespace": "state_dict.ema_denoiser.",
+        "dit_expected_keys": 463,
+        "encoder_recipe": "Float8CurrentScaling",
+        "upstream_encoder_recipe": "MXFP8BlockScaling",
+        "hardware_adaptation": "H100 recipe from requested pipeline; not bit-identical to B300 MXFP8 encoding",
+        "model_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-caption-euc1-h100128-20261009/model/hf/",
+        "export_manifest_sha256": "852f6391b489f445d705a322ef6a60c8b6bbe946053bf7f244333ac62f113242"
+      },
+      "pod_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "node_count": 16
+    }
+  },
+  "publication_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/",
+  "shared_assets_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe29-dit4k-s4000-cfg25-euc1-h100128-20261009/",
+  "inputs_per_arm": 1464,
+  "total_inputs": 1464,
+  "allocated_gpus": 128,
+  "gpus": 127,
+  "training_prompt": "luna_source_target_size_ordered_sparse_reference_edits_v1",
+  "training_prompt_sha256": "11fea93c330ccd076075001a7af52bf3713975a85a29dc442b23bab0317ab91e",
+  "gpu_ids": {
+    "0": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "1": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "2": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7
+    ],
+    "3": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "4": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "5": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "6": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "7": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "8": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "9": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "10": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "11": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "12": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "13": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "14": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "15": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "thermal_exclusions": [
+    {
+      "node": 2,
+      "gpu": 4,
+      "reason": "prior campaign thermal slowdown at 87C"
+    }
+  ],
+  "request_revision": "PE39c59 c4000 + Qwen-PE -> native DiT4000 EMA CFG2.5",
+  "caption_source_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-caption-euc1-h100128-20261009/",
+  "reuse_root": "/mnt/ephemeral/pe39c59-c4000-qwenpe-caption-20261009",
+  "dit_step": 4000,
+  "caption_reuse_policy": "Consume newly inferred captions from this same PE39c59 c4000 Qwen-PE arm",
+  "bundle_reuse_policy": "Fresh encoding for all accepted new captions; no old bundles or images reused",
+  "use_qwen_pe": true,
+  "instruction_policy": "qwen_image_2_1_pe_i2i_rewritten_prompt_verbatim",
+  "input_sha256": "854033ce2de5e5203574a8e49f0e31de0c3b24618ec9405bbeddf2110f2ced98",
+  "qwen_pe_predictions_sha256": "528ee56b1090a2c4841a661057cf863778618e18f10a2a7b6a20393828dd56c2",
+  "qwen_pe_predictions_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/9c4d29-qwenrewrite-dit44k-fixed-20261007/inputs/qwen-pe-predictions.jsonl",
+  "gsb_enabled": false
+}
