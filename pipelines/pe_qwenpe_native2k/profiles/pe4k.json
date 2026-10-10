@@ -217,6 +217,11 @@
       "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/gsb-vs-qwen21/code/bundle-58646262a0b737361a55d622764e63e2a27c5871a7e84b9bb7eda32dc0fff1de.tar.gz",
       "sha256": "58646262a0b737361a55d622764e63e2a27c5871a7e84b9bb7eda32dc0fff1de",
       "bytes": 3405660
+    },
+    "gsb_dit6000": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-dit6k-s6000-cfg25-euc1-h100128-20261010/gsb-vs-qwen21/code/bundle-e003d456ed3f223837bfae5c382d58fe3894a578d1b6e581ea45428596494c3e.tar.gz",
+      "sha256": "e003d456ed3f223837bfae5c382d58fe3894a578d1b6e581ea45428596494c3e",
+      "bytes": 3550792
     }
   },
   "gsb": {

@@ -46,7 +46,7 @@ def restore_bundle(receipt,target,profile_name,bundle_file=None):
     if manifest.exists():
         for name,digest in read(manifest).items():assert sha(target/name)==digest,name
     return target
-def configure(root,config,stage,output,workspace,runtime_from=None):
+def configure(root,config,stage,output,workspace,runtime_from=None,dit_cache_from=None):
     campaign=read(root/'campaign.json');step=str(config['pe_step'])
     assert campaign['arms'][step]['checkpoint']['checkpoint_manifest_sha256']==config['caption_checkpoint']['checkpoint_manifest_sha256']
     assert campaign['input_sha256']==config['input_sha256']
@@ -56,6 +56,10 @@ def configure(root,config,stage,output,workspace,runtime_from=None):
     campaign['publication_prefix']=destination
     campaign['arms'][step]['checkpoint']['publication_prefix']=destination
     campaign['gsb_enabled']=False
+    if dit_cache_from:
+        if stage!='dit6000' or 'dit_cache_root' not in campaign:
+            raise ValueError('This source bundle does not use a read-only DiT6000 cache')
+        campaign['dit_cache_root']=str(Path(dit_cache_from).resolve())
     wf=root/'package/workflow'
     if stage!='caption':
         campaign['caption_source_prefix']=output+'caption/'
@@ -91,10 +95,11 @@ def main():
     p.add_argument('--aws-profile',default='core-cn-s3-readwrite')
     p.add_argument('--bundle-file',type=Path)
     p.add_argument('--runtime-from',type=Path)
+    p.add_argument('--dit-cache-from',type=Path,help='Verified read-only DiT6000 DCP cache, for PE-3k')
     a=p.parse_args();config=profile(a.profile)
     if a.stage not in config['bundles']:p.error('This stage has no verified source bundle for the selected PE profile')
     output=safe_destination(a.output_s3);workspace=a.workspace.resolve()
     root=restore_bundle(config['bundles'][a.stage],workspace/a.stage,a.aws_profile,a.bundle_file)
-    destination=configure(root,config,a.stage,output,workspace,a.runtime_from)
+    destination=configure(root,config,a.stage,output,workspace,a.runtime_from,a.dit_cache_from)
     print(json.dumps(dict(status='PASS',root=str(root),publication_prefix=destination,pe_step=config['pe_step'],stage=a.stage)))
 if __name__=='__main__':main()

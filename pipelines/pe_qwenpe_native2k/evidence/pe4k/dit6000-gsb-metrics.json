@@ -1,0 +1,32 @@
+{
+  "pairs": 1256,
+  "judgments": 2512,
+  "publication_prefix": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-dit6k-s6000-cfg25-euc1-h100128-20261010/gsb-vs-qwen21/",
+  "workers": 4,
+  "concurrency_per_worker": 256,
+  "total_concurrency": 1024,
+  "status": "PASS",
+  "summary_status": "complete",
+  "comparisons": {
+    "pe39c59_qwenpe_c4000_dit6k_s6000_ema_cfg25": {
+      "consistency": {
+        "bad": 522,
+        "good": 385,
+        "n": 1256,
+        "net_win_rate": -0.10907643312101911,
+        "position_disagreements": 329,
+        "similar": 349,
+        "win_rate_excluding_similar": 0.4244762954796031
+      },
+      "quality": {
+        "bad": 556,
+        "good": 302,
+        "n": 1256,
+        "net_win_rate": -0.20222929936305734,
+        "position_disagreements": 346,
+        "similar": 398,
+        "win_rate_excluding_similar": 0.351981351981352
+      }
+    }
+  }
+}

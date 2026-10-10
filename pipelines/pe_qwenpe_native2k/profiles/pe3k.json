@@ -212,6 +212,11 @@
       "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit4k-s4000-cfg25-euc1-h100128-20261009/gsb-vs-qwen21/code/bundle-041929999935fd9caa9844ff0c30caa636dceca002055bb50a1d3beb5d45dc48.tar.gz",
       "sha256": "041929999935fd9caa9844ff0c30caa636dceca002055bb50a1d3beb5d45dc48",
       "bytes": 3420986
+    },
+    "dit6000": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit6k-s6000-cfg25-euc1-h100128-20261010/reproduction/code-f6f53c14a8b82f9236349071bcce0f0ed7759a0a30785d15cef14fcaec3a162f.tar.gz",
+      "sha256": "f6f53c14a8b82f9236349071bcce0f0ed7759a0a30785d15cef14fcaec3a162f",
+      "bytes": 21274843
     }
   },
   "gsb": {
@@ -222,5 +227,6 @@
     "double_order": true,
     "baseline": "qwen_image21_cfg1",
     "protocol_sha256": "073a1cd0cab0516e9c7ad9c9c85bfe9d147f19f5a3876a4319b710eac35691e6"
-  }
+  },
+  "dit6000_read_only_cache": true
 }

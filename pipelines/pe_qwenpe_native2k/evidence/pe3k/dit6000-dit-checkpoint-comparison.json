@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "previous_step": 4000,
+  "new_step": 6000,
+  "keys": 463,
+  "shape_and_dtype_match": true,
+  "storage_chunks": 3704,
+  "changed_serialized_chunks": 3704,
+  "changed_tensor_keys": 463,
+  "numeric_chunks_compared": 463,
+  "numeric_verification": "A differing original float32 chunk proves each changed tensor; all chunks checked before calling any tensor unchanged.",
+  "unchanged_tensor_keys": [],
+  "checkpoint_proof_sha256": "d127f698f9651117c1e8587200c84927b7d3ef3963a3cd561172e3390946e87c",
+  "previous_checkpoint_proof_sha256": "02311bec576345d2ccc4533a310977cbb0019474e081ee00818f73ed3f18c3f5",
+  "serialized_tensor_bytes_unchanged": true
+}

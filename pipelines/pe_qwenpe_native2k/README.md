@@ -14,7 +14,7 @@
 | PE-4k | 同一 run，checkpoint-4000，独立 trained-MTP HF export |
 | PE prompt | `luna_source_target_size_ordered_sparse_reference_edits_v1`，区别于 PE-29k 的 IEv6 prompt |
 | Caption 推理 | 首轮 greedy、seed 42、max model length 32768、max new tokens 27000、trained MTP；截断/JSON/schema 错误明确排除 |
-| DiT | `edit2k-r21-sft-ema20k-15n-1009-0652`，step=4000，原生 DCP |
+| DiT | `edit2k-r21-sft-ema20k-15n-1009-0652`，默认 step=4000；第 7 节支持 step=6000，均为原生 DCP |
 | 权重 | **仅 `state_dict.ema_denoiser.*`，463 键，严格加载；不加载 optimizer** |
 | 生图 | trainorder-v2，EMA，CFG=2.5，50 sampling steps，native 2K，max pixels 4194304，timeshift=4.6，seed 42 |
 | H100 encoder | Float8CurrentScaling；不是 B300 MXFP8 的逐位复现 |
@@ -32,7 +32,7 @@ Qwen 改写不是本次重新生成：1,464 条冻结改写的 SHA 为 `528ee56b
 
 ## 2. 已验证结果与消费入口
 
-| Profile | Caption 全量 / valid | DiT 图片 | GSB 判断 |
+| Profile | Caption 全量 / valid | DiT4k 图片 | DiT4k GSB 判断 |
 |---|---:|---:|---:|
 | PE-3k + Qwen-PE | 1,464 / 1,390 | 1,258 | 2,516 |
 | PE-4k + Qwen-PE | 1,464 / 1,384 | 1,256 | 2,512 |
@@ -145,11 +145,47 @@ JobSet 使用四个持续工作的 Indexed worker，每个 80 CPU / 180Gi，合�
 
 净胜率为 `(G−B)/N`；共有样本比较先按 `sample_id` 取交集，再检查 source、control、original instruction 和 input index 一致。2,511 次完成调用不能称作 2,511 个 GSB 样本：若有一次 AB/BA 未完成，只报告完整配对的临时结果。
 
-## 7. PE-4k caption 切换 DiT 6k
+## 7. PE-3k / PE-4k caption 切换 DiT 6k
 
-仅 `pe4k` profile 提供本轮 DiT 6000 bundle。先完成同一 workspace 中的 caption 与 DiT4000，再使用 `--stage dit6000` 重复第 5 节。保留本地 DiT4000 bundles：只有完整 resume contract、caption、native manifest、audit 和 encoding identity 全部一致才复用编码。所有图片重新使用 step=6000 的 463 个 EMA 权重生成；CFG、50 sampling steps、timeshift、seed 和 canvas 保持不变。
+`pe3k` 与 `pe4k` profile 均提供 DiT 6000 bundle。先完成同一 workspace 中的 caption 与 DiT4000，再使用 `--stage dit6000` 重复第 5 节。保留本地 DiT4000 bundles：只有完整 resume contract、caption、native manifest、audit 和 encoding identity 全部一致才复用编码。所有图片重新使用 step=6000 的 463 个 EMA 权重生成；CFG、50 sampling steps、timeshift、seed 和 canvas 保持不变。
 
-当前 GSB 准备入口明确限定 **DiT4000**；DiT6000 需要独立配置、结果前缀及评分协议，不能冒用 DiT4000 的指标。
+PE-3k 的本次执行复用已分发的 DiT6000 DCP 缓存，并逐文件核对 SHA256。新环境可先在每节点恢复同一份缓存，再用 `--dit-cache-from` 指定位置：
+
+```bash
+export DIT6K_CACHE=/mnt/ephemeral/YOUR_VERIFIED_DIT6000_CACHE
+export DIT6K_ASSETS=s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c4000-qwenpe-dit6k-s6000-cfg25-euc1-h100128-20261010/models/dit-ema/
+aws --profile core-cn-s3-readwrite s3 sync "$DIT6K_ASSETS" "$DIT6K_CACHE/"
+python3 "$PE_TOOLS/materialize.py" --profile pe3k --stage dit6000 \
+  --workspace "$PE_WORK" --output-s3 "$PE_OUT" --runtime-from "$RUNTIME_FROM" \
+  --dit-cache-from "$DIT6K_CACHE"
+```
+
+缓存只读；`CHECKPOINT.json` SHA256 固定为 `d127f698f9651117c1e8587200c84927b7d3ef3963a3cd561172e3390946e87c`，任一文件缺失或校验失败均停止。按第 5 节执行时，将 `run_node.py --root` 改为 `$PE_WORK/dit6000`。
+
+PE-4k + DiT6000 使用独立评分协议，仍为同一 Qwen 基线、同一 rubric 和 UTP 4×256。生成验证通过后，评分入口如下；JobSet 写到 `utp-dit6000/`，后续 Arnold dry-run、提交和验证沿用第 6 节。PE-3k 的 DiT6000 配置当前仅包括生图。
+
+```bash
+export GSB_JOB=YOUR_UNIQUE_DIT6K_GSB_JOB
+python3 "$PE_TOOLS/prepare_gsb.py" --profile pe4k --dit-step 6000 \
+  --workspace "$PE_WORK" --job-name "$GSB_JOB"
+arnold submit -f "$PE_WORK/utp-dit6000/jobset.yaml" --application-id core-cn \
+  --project-id pixelcraftbench --cluster p-iad-eagle --namespace b-core-cn-prod \
+  --job-name "$GSB_JOB" --dry-run
+arnold submit -f "$PE_WORK/utp-dit6000/jobset.yaml" --application-id core-cn \
+  --project-id pixelcraftbench --cluster p-iad-eagle --namespace b-core-cn-prod \
+  --job-name "$GSB_JOB" --no-wait
+```
+
+DiT4k 与 DiT6k 的 JobSet 名称、结果前缀和评分协议均须独立。DiT6000 的 GSB 文件位于 `${PE_OUT}/dit6000/gsb-vs-qwen21/`。
+
+PE-4k + DiT6000 已完成 1,256 张图片、2,512 次 GSB 判断，最终验证 PASS。全部 caption 和 conditioning 与 PE-4k + DiT4000 一致，1,256 张输出均重新生成且 hash 改变。以下两组各自对同一 Qwen-Image-2.1 基线评分，覆盖相同的 1,256 个样本：
+
+| 维度 | DiT4000 G/S/B | DiT6000 G/S/B | DiT4000 净胜率 | DiT6000 净胜率 | 6k−4k |
+|---|---|---|---:|---:|---:|
+| 一致性 | 366/365/525 | 385/349/522 | −12.66% | −10.91% | +1.75 pp |
+| 视觉质量 | 304/400/552 | 302/398/556 | −19.75% | −20.22% | −0.48 pp |
+
+完整指标与验证回执见 [DiT6000 GSB 指标](evidence/pe4k/dit6000-gsb-metrics.json)、[共有样本比较](evidence/pe4k/dit6000-gsb-common-cohorts.json) 和 [GSB 验证](evidence/pe4k/dit6000-GSB_VERIFIED.json)。
 
 ## 8. 验证边界
 

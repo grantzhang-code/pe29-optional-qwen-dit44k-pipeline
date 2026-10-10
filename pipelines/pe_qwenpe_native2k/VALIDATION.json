@@ -4,7 +4,8 @@
     "pe3k": {
       "restored_bundle_stages": [
         "caption",
-        "dit4000"
+        "dit4000",
+        "dit6000"
       ],
       "pairs": 1258,
       "judgments": 2516,
@@ -15,7 +16,8 @@
         "3": 314
       },
       "judge_functions_unchanged": true,
-      "historical_output_overwrite_rejected": true
+      "historical_output_overwrite_rejected": true,
+      "dit6000_cache_override_verified": true
     },
     "pe4k": {
       "restored_bundle_stages": [
@@ -32,11 +34,26 @@
         "3": 314
       },
       "judge_functions_unchanged": true,
-      "historical_output_overwrite_rejected": true
+      "historical_output_overwrite_rejected": true,
+      "dit6000_gsb": {
+        "status": "PASS",
+        "pairs": 1256,
+        "judgments": 2512,
+        "worker_pair_counts": {
+          "0": 314,
+          "1": 314,
+          "2": 314,
+          "3": 314
+        },
+        "judge_functions_unchanged": true,
+        "workers": 4,
+        "concurrency_per_worker": 256,
+        "new_submission": false
+      }
     }
   },
-  "python_files_parsed": 48,
-  "bash_blocks_syntax_checked": 5,
+  "python_files_parsed": 55,
+  "bash_blocks_syntax_checked": 7,
   "new_gpu_inference_during_packaging": false,
   "new_gsb_submission_during_packaging": false,
   "historical_full_runs_verified": true,
@@ -53,5 +70,22 @@
     "queue": "core-cn-default-queue",
     "cross_namespace_required_anti_affinity": true,
     "submitted": false
+  },
+  "verified_dit6000_runs": {
+    "pe4k": {
+      "generation": "PASS",
+      "same_caption_conditioning": "PASS",
+      "images": 1256,
+      "gsb": "PASS",
+      "judgments": 2512,
+      "encoder_order": "PASS"
+    },
+    "pe3k": {
+      "generation": "PASS",
+      "same_caption_conditioning": "PASS",
+      "encoder_order": "PASS",
+      "images": 1258,
+      "gsb": "not_requested"
+    }
   }
 }

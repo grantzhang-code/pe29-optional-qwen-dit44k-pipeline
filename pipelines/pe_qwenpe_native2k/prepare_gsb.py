@@ -8,6 +8,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--profile',choices=['pe3k','pe4k'],required=True)
     p.add_argument('--workspace',type=Path,required=True)
+    p.add_argument('--dit-step',type=int,choices=[4000,6000],default=4000)
     p.add_argument('--job-name',required=True)
     p.add_argument('--aws-profile',default='core-cn-s3-readwrite')
     p.add_argument('--reference-bundle',type=Path)
@@ -15,14 +16,19 @@ def main():
     a=p.parse_args();config=profile(a.profile);workspace=a.workspace.resolve()
     if not re.fullmatch(r'[a-z0-9](?:[a-z0-9-]{0,48}[a-z0-9])?',a.job_name):
         p.error('Use a unique lowercase JobSet name of at most 50 characters')
-    cap=workspace/'caption';run=workspace/'dit4000';g=run/'gsb_vs_qwen21';out=workspace/'utp'
-    assert read(run/'campaign.json')['dit_step']==4000
+    reference_key='gsb' if a.dit_step==4000 else 'gsb_dit6000'
+    if reference_key not in config['bundles']:
+        p.error('No verified scoring bundle exists for this PE/DiT combination')
+    cap=workspace/'caption';run=workspace/f'dit{a.dit_step}';g=run/'gsb_vs_qwen21'
+    out=workspace/('utp' if a.dit_step==4000 else 'utp-dit6000')
+    assert read(run/'campaign.json')['dit_step']==a.dit_step
     assert read(run/'campaign.json')['arms'][str(config['pe_step'])]['checkpoint']['checkpoint_step']==config['pe_step']
     assert not (g/'protocol.json').exists(),'Use a fresh scoring directory; never overwrite a frozen protocol'
-    restored=restore_bundle(config['bundles']['gsb'],workspace/'gsb-reference',a.aws_profile,a.reference_bundle)
+    restored=restore_bundle(config['bundles'][reference_key],workspace/('gsb-reference' if a.dit_step==4000 else 'gsb-reference-dit6000'),a.aws_profile,a.reference_bundle)
     original=read(restored/'protocol.json')
     for name,digest in original['input_hashes'].items():assert sha(restored/'inputs'/name)==digest,name
-    shutil.copytree(HERE/'gsb/templates'/a.profile,g,dirs_exist_ok=True)
+    template=a.profile if a.dit_step==4000 else a.profile+'-dit6000'
+    shutil.copytree(HERE/'gsb/templates'/template,g,dirs_exist_ok=True)
     (g/'inputs').mkdir(exist_ok=True)
     for name in ['control-pairs.jsonl','control-protocol.json','reference-protocol.json','gsb_rubric.json']:
         shutil.copy2(restored/'inputs'/name,g/'inputs'/name)

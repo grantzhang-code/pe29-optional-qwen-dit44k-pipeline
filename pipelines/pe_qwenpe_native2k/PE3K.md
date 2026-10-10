@@ -32,3 +32,15 @@ s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59
 | 视觉质量 | 281/391/523 | 275/387/533 | −20.25% | −21.59% | −1.34 pp |
 
 净胜率 `(G−B)/1195`。这不是 PE-3k 对 PE-2k 的直接对战。机器可读结果见 [gsb-common-cohorts.json](evidence/pe3k/gsb-common-cohorts.json)。
+
+## 复用同一 caption 切换 DiT 6k
+
+[运行说明第 7 节](README.md#7-pe-3k--pe-4k-caption-切换-dit-6k) 提供 `pe3k / dit6000` 的恢复与运行命令。复用 PE-3k caption 和经过完整身份校验的 DiT4k conditioning bundles，改用 DiT step=6000 的 463 个 EMA 权重重新生成全部图片；CFG=2.5、50 steps、native 2K、timeshift=4.6、seed=42 和 trainorder-v2 保持不变。
+
+源码见 [recorded/pe3k/dit6000/](recorded/pe3k/dit6000/)，完整部署包及 SHA256 见 [profiles/pe3k.json](profiles/pe3k.json)。本页上方的 GSB 指标对应 DiT4k。
+
+DiT6000 生图已完成：**1,258 张，206 条排除记录**，S3 全量校验与 text encoder 顺序审计均 PASS。与 DiT4000 的 caption、样本集合及 conditioning 一致；1,258 张输出均重新生成且 hash 改变。证据见 [生成汇总](evidence/pe3k/dit6000-generation-summary.json)、[顺序审计](evidence/pe3k/dit6000-encoder-order-summary.json) 和 [同 caption 对照](evidence/pe3k/dit6000-same-caption-dit-comparison.json)。本次 PE-3k + DiT6000 未进行 GSB。
+
+```text
+s3://core-cn-oss.canva.com/usr/grantzhang/pixelcraftbench-v2/evaluations/pe39c59-c3000-qwenpe-dit6k-s6000-cfg25-euc1-h100128-20261010/editor/score-index.jsonl
+```
